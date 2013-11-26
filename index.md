@@ -1,6 +1,5 @@
 ---
 title: arrian.github.io
-layout: default
 ---
 
 
