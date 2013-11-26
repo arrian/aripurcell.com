@@ -1,6 +1,6 @@
 ---
 title: arrian.github.io
-subtitle: testing subtitle
+layout: default
 ---
 
 
