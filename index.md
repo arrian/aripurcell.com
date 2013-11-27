@@ -24,4 +24,13 @@ If you prefer to not use the automatic generator, push a branch named `gh-pages`
 You can @mention a GitHub username to generate a link to their profile. The resulting `<a>` element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (@defunkt), PJ Hyett (@pjhyett), and Tom Preston-Werner (@mojombo) founded GitHub.
 
 ### Support or Contact
-Having trouble with Pages? Check out the documentation at http://help.github.com/pages or contact support@github.com and we’ll help you sort it out.
+Having trouble with Pages? Check out the documentation at [http://help.github.com/pages] or contact support@github.com and we’ll help you sort it out.
+
+
+{% highlight ruby %}
+(bind-func particle-create
+	(lambda (xPos:double yPos:double xVel:double yVel:double radius:double alpha:double)
+		(let ((particle:particle-type* (zalloc)))
+			(tfill! particle xPos yPos xVel yVel radius alpha)
+			particle)))
+{% endhighlight %}
