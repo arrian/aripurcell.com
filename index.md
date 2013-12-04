@@ -1,10 +1,21 @@
 ---
 layout: default
-title: Extempore on Windows 
+title: Arrian Purcell 
 tags:
 - extempore
 - windows
+
 ---
+
+# Arrian Purcell
+
+<table>
+<tr>
+{% for tag in page.tags %}
+<td>{{ tag }}</td>
+{% endfor %}
+</tr>
+</table>
 
 
 
