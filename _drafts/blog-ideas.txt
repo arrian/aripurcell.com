@@ -1,0 +1,28 @@
+
+
+-what is live coding (history/current/lit review)
+-first song
+-first graphics
+-possible errors
+	-Scheme to xlang type conversion error
+	-Attempting to return a string from non-symbol obj ()
+	-sorry the compiler does not currently allow you to redefine or overload the type signature of existing functions
+	-libsndfile
+	-opengl
+
+-function/type index
+-graphics
+-examples
+-creating instrument/drum rack
+-snippets
+-compiling from cmake
+
+
+-----------------------------------------------------
+Getting Started on Extempore for Windows
+
+-compiling libraries
+-sublime packages
+-sublime quick panel update when typed
+
+

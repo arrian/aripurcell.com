@@ -11,9 +11,11 @@ tags:
 ### Welcome to GitHub Pages.
 This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:
 
-    $ cd your_repo_root/repo_name
-    $ git fetch origin
-    $ git checkout gh-pages
+```
+$ cd your_repo_root/repo_name
+$ git fetch origin
+$ git checkout gh-pages
+```
 
 If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.
 
@@ -30,10 +32,10 @@ You can @mention a GitHub username to generate a link to their profile. The resu
 Having trouble with Pages? Check out the documentation at [http://help.github.com/pages] or contact support@github.com and we’ll help you sort it out.
 
 
-{% highlight ruby %}
+```scheme
 (bind-func particle-create
 	(lambda (xPos:double yPos:double xVel:double yVel:double radius:double alpha:double)
 		(let ((particle:particle-type* (zalloc)))
 			(tfill! particle xPos yPos xVel yVel radius alpha)
 			particle)))
-{% endhighlight %}
+```
