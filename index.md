@@ -2,8 +2,8 @@
 layout: default
 title: Extempore on Windows 
 tags:
-	- extempore
-	- windows
+- extempore
+- windows
 ---
 
 
