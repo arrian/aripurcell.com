@@ -1,6 +1,9 @@
 ---
-title: arrian.github.io
 layout: default
+title: Extempore on Windows 
+tags:
+	- extempore
+	- windows
 ---
 
 
