@@ -7,10 +7,6 @@ tags:
 
 ---
 
-{% for tag in page.tags %}
-<div class="tag">{{ tag }}</div>
-{% endfor %}
-
 
 Note: In Draft
 

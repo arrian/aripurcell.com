@@ -26,3 +26,12 @@ Getting Started on Extempore for Windows
 -sublime quick panel update when typed
 
 
+----------------------
+Other
+
+-Hackday
+-Sublime Plugin
+-Cmake
+-libsndfile
+-opengl
+-
