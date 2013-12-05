@@ -2,10 +2,15 @@
 layout: default
 title: Extempore on Windows 
 tags:
-  - extempore
-  - windows
+- extempore
+- windows
 
 ---
+
+{% for tag in page.tags %}
+<div class="tag">{{ tag }}</div>
+{% endfor %}
+
 
 Note: In Draft
 
@@ -54,16 +59,12 @@ You now have a fully functional live coding environment. To test it out do the f
 ```scheme
 
 (sys:load "libs/core/math.xtm")
-
 (sys:load "libs/core/audio_dsp.xtm")
-
 (sys:load "libs/core/instruments.xtm")
 
 (bind-func dsp:[float,float,i64,i64,float*]*
-  (let ((osc (osc_mc_c 0.0))
-        (lpf (lpf_mc_c 2)))
     (lambda (in time chan dat)
-      (sawlead in time chan dat))))
+      (sawlead in time chan dat)))
 
 (dsp:set! dsp)
 

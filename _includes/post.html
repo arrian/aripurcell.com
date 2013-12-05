@@ -1,0 +1,24 @@
+
+    <div id="content">
+      <h3 id="content-title">{{include.post.title}}</h3>
+      <p id="content-date">{{include.post.date | date: "%-d %B %Y"}}</p>
+
+    <div id="content-body">
+      {{include.post.content}}
+      <div class="divider"></div>
+        <div id="disqus_thread">
+          <script type="text/javascript">
+            var disqus_shortname = 'arrian'; // Required - Replace example with your forum shortname
+            var disqus_identifier = 'index_test';
+            var disqus_title = 'Index Test';
+            var disqus_url = 'http://arrian.github.io/index_test.html';
+
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+          </script>
+        </div>
+      </div>
+    </div>
