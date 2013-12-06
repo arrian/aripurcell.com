@@ -3,6 +3,7 @@ html
 {
   padding: 0px;
   margin: 0px;
+  height: 100%;
 }
 
 body
@@ -11,6 +12,7 @@ body
   margin: 0px;
   font-family: 'Roboto', sans-serif;
   min-width: 550px;
+  height: 100%;
 }
 
 ::selection 
@@ -150,7 +152,9 @@ h1, h2, h3, h4, h5, h6
 
 #footer
 {
+  padding: 20px;
   height: 400px;
+  width: 100%;
   background-color: #151515;
   text-align: center;
 }
@@ -176,7 +180,6 @@ code, pre
   padding: 3px;
   border-radius: 3px;
   background-color: rgb(240, 240, 240);
-  color: #222;
   border: 1px solid rgba(0,0,0,0.2);
 }
 

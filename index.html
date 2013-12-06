@@ -1,0 +1,40 @@
+---
+layout: default
+title: Arrian Purcell
+
+---
+
+
+
+{% for post in site.posts %}
+<div id="content">
+	<h3 id="content-title">{{post.title}}</h3>
+	<p id="content-date">{{post.date | date: "%-d %B %Y"}}</p>
+
+	<div id="content-body">
+		{% for tag in post.tags %}
+		<a  class="tag" href="http://arrian.github.io/tags.html">{{ tag }}</a>
+		{% endfor %}
+		{{post.content}}
+		<div class="divider"></div>
+		<div id="disqus_thread">
+			<script type="text/javascript">
+			    var disqus_shortname = 'arrian'; // Required - Replace example with your forum shortname
+			    var disqus_identifier = '{{post.url}}';
+			    var disqus_title = '{{post.title}}';
+			    var disqus_url = 'http://arrian.github.io{{post.url}}';
+
+			    (function() {
+			        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+			        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+			        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+			    })();
+			</script>
+		</div>
+    </div>
+</div>
+
+
+{% endfor %}
+
+

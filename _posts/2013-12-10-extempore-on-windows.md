@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: Extempore on Windows 
 tags:
 - extempore
@@ -8,28 +8,24 @@ tags:
 ---
 
 
-Note: In Draft
-
-# Extempore on Windows 
-
 If you're interested in getting started on Extempore on Windows but not sure where to begin, here is a quick run through.
 
 ## Basics
 
 Extempore runs as a service and executes any code sent to it over a TCP socket. The basic interaction with Extempore is through a text editor. For a demonstration of this in action see [this video](http://vimeo.com/78788032). This is often described as a compiler as a service (CaaS) model.
 
-## What Do I Need?
+## Prerequisites
 
 To get started live coding in Extempore you need two things:
 
--Extempore (executable and libraries)
--Text Editor (and an associated plugin)
+- Extempore (executable and libraries)
+- Text Editor (and an associated plugin)
 
 ### Extempore
 
-Extempore is available from [insert link to binary here?]. The contents of this download have everything you need to start running Extempore.
+Extempore is available from (insert link to binary here?). The contents of this download have everything you need to start running Extempore.
 
-Alternatively, if you are interested in building from source, Extempore is available at [https://github.com/digego/extempore].
+Alternatively, if you are interested in building from source, Extempore is available [here](https://github.com/digego/extempore).
 
 If you have downloaded Extempore or have compiled it from source, open up a terminal, change to the directory containing extempore and run the executable:
     $ ./extempore.exe
@@ -47,13 +43,13 @@ This plugin allows the text editor to communicate with the extempore process, al
 ## Creating Sound
 
 You now have a fully functional live coding environment. To test it out do the following:
--Start the Extempore process from the terminal (run "extempore.exe")
--Open Sublime
--Connect to the Extempore process by typing `Ctrl-X Ctrl-Y` and press enter selecting the default option (localhost:7099)
--Copy the following code into Sublime:
+- Start the Extempore process from the terminal (run `extempore.exe`)
+- Open Sublime
+- Connect to the Extempore process by typing `Ctrl-X Ctrl-Y` and press enter selecting the default option (localhost:7099)
+- Copy the following code into Sublime:
 
-```scheme
 
+{% highlight scheme %}
 (sys:load "libs/core/math.xtm")
 (sys:load "libs/core/audio_dsp.xtm")
 (sys:load "libs/core/instruments.xtm")
@@ -71,9 +67,9 @@ You now have a fully functional live coding environment. To test it out do the f
 
 (sawlead-recursion (*metro* 'get-beat 4) 1/4)
 
-```
+{% endhighlight %}
 
--Select all the text and type `Ctrl-X Ctrl-X` to evaluate the selection
+- Select all the text and type `Ctrl-X Ctrl-X` to evaluate the selection
 
 In the extempore process terminal window you should see a whole bunch of output. These are functions from the standard libraries being loaded.
 
