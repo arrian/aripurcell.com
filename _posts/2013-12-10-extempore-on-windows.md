@@ -21,16 +21,12 @@ To get started live coding in Extempore you need two things:
 - Extempore (executable and libraries)
 - Text Editor (and an associated plugin)
 
+
 ### Extempore
 
-Extempore is available from (insert link to binary here?). The contents of this download have everything you need to start running Extempore.
+Extempore is available from [GitHub](https://github.com/digego/extempore). Either download the [zip](https://github.com/digego/extempore/archive/master.zip) or [clone the repository](github-windows://openRepo/https://github.com/digego/extempore). To build for the first time, open the terminal in the downloaded directory and run 'scons --incl-deps'. This will download and compile dependencies and then build Extempore. Depending on your computer and internet connection, this may take some time. If you plan to do some development in Visual Studio, run 'scons --solution'. This will generate an Extempore.sln file. Otherwise running just 'scons' with no arguments will compile Extempore.
 
-Alternatively, if you are interested in building from source, Extempore is available [here](https://github.com/digego/extempore).
-
-If you have downloaded Extempore or have compiled it from source, open up a terminal, change to the directory containing extempore and run the executable:
-    $ ./extempore.exe
-
-This will start the extempore server, waiting for code to be sent from the text editor. Press `ctrl-C` to kill the server.
+After the compilation has finished you should have an 'extempore.exe'. Running this executable from the command line will start the extempore server, waiting for code to be sent from the text editor. Press `ctrl-c` to kill the server.
 
 ### Text Editor
 
@@ -45,7 +41,7 @@ This plugin allows the text editor to communicate with the extempore process, al
 You now have a fully functional live coding environment. To test it out do the following:
 - Start the Extempore process from the terminal (run `extempore.exe`)
 - Open Sublime
-- Connect to the Extempore process by typing `Ctrl-X Ctrl-Y` and press enter selecting the default option (localhost:7099)
+- Connect to the Extempore process by typing `ctrl-x ctrl-y` and press enter selecting the default host and port (localhost:7099)
 - Copy the following code into Sublime:
 
 
@@ -69,10 +65,9 @@ You now have a fully functional live coding environment. To test it out do the f
 
 {% endhighlight %}
 
-- Select all the text and type `Ctrl-X Ctrl-X` to evaluate the selection
+- Select all the text and type `ctrl-x ctrl-x`
 
-In the extempore process terminal window you should see a whole bunch of output. These are functions from the standard libraries being loaded.
-
+In the extempore process terminal window you should see some output from loading the standard libraries. If all goes well you should hear some sound.
 
 ## Where To From Here?
 
