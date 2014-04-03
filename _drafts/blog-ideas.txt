@@ -33,3 +33,40 @@ Getting Started on Extempore for Windows
 -sublime packages
 -sublime quick panel update when typed
 
+-----------------------------------------------------
+
+Visuals Series
+-Introduction
+-Shape
+	-2D with OpenVG
+	-3D with Horde3D
+	-OpenGL
+-Movement
+-Shading
+
+
+-Matching Music
+-Reactivity
+-Progressive Visuals vs The Fast Change
+
+-Theory of Colour, Shape and Texture
+-Theory of Entertainment
+-Theory of Informative Visuals/Information Visualisation
+-Theory of Movement and Placement
+-Elements of Visuals
+
+-Something on new media
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -4,37 +4,27 @@ title: Arrian Purcell
 
 ---
 
+<h3 id="content-title">{{site.posts.first.title}}</h3>
+<p id="content-tags">    {% for tag in site.posts.first.tags %}
+<a href="/tags.html">[ {{ tag }} ]</a>
+{% endfor %}</p>
+<p id="content-date">{{site.posts.first.date | date: "%-d %B %Y"}}</p>
 
-
-{% for post in site.posts %}
-<div id="content">
-	<h3 id="content-title">{{post.title}}</h3>
-	<p id="content-date">{{post.date | date: "%-d %B %Y"}}</p>
-
-	<div id="content-body">
-		{% for tag in post.tags %}
-		<a  class="tag" href="http://arrian.github.io/tags.html">{{ tag }}</a>
-		{% endfor %}
-		{{post.content}}
-		<div class="divider"></div>
-		<div id="disqus_thread">
-			<script type="text/javascript">
-			    var disqus_shortname = 'arrian'; // Required - Replace example with your forum shortname
-			    var disqus_identifier = '{{post.url}}';
-			    var disqus_title = '{{post.title}}';
-			    var disqus_url = 'http://arrian.github.io{{post.url}}';
-
-			    (function() {
-			        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-			        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-			        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-			    })();
-			</script>
-		</div>
-    </div>
+<div id="content-body">
+	{{site.posts.first.content}}
 </div>
+<div id="content-link-container">
+    <div class="content-link content-previous"> 
+    {% if site.posts.first.previous.url %} 
+            <a href="{{site.posts.first.previous.url}}">&#10094; {{site.posts.first.previous.title}}</a> 
+    {% endif %} 
+    </div> 
 
-
-{% endfor %}
+    <div class="content-link content-next"> 
+    {% if site.posts.first.next.url %} 
+            <a href="{{site.posts.first.next.url}}">{{site.posts.first.next.title}} &#10095;</a> 
+    {% endif %} 
+    </div> 
+</div>
 
 
