@@ -19,7 +19,6 @@ body
   min-width: 650px;
   min-height: 100%;
   background-color:rgb(66, 154, 236);/*#63a033;*/
-  background-image:url('/images/sky.jpg');
 }
 
 h1, h2, h3, h4, h5, h6
