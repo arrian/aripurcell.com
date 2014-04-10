@@ -10,9 +10,6 @@ title: Arrian Purcell
 {% endfor %}</p>
 <p id="content-date">{{site.posts.first.date | date: "%-d %B %Y"}}</p>
 
-<div id="content-body">
-	{{site.posts.first.content}}
-</div>
 <div id="content-link-container">
     <div class="content-link content-previous"> 
     {% if site.posts.first.previous.url %} 
@@ -26,5 +23,10 @@ title: Arrian Purcell
     {% endif %} 
     </div> 
 </div>
+
+<div id="content-body">
+	{{site.posts.first.content}}
+</div>
+
 
 

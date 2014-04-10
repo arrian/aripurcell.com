@@ -6,9 +6,6 @@
 {% endfor %}</p>
 <p id="content-date">{{page.date | date: "%-d %B %Y"}}</p>
 
-<div id="content-body">
-  {{content}}
-</div>
 <div id="content-link-container">
     <div class="content-link content-previous"> 
     {% if page.previous.url %} 
@@ -21,6 +18,10 @@
             <a href="{{page.next.url}}">{{page.next.title}} &#10095;</a> 
     {% endif %} 
     </div> 
+</div>
+
+<div id="content-body">
+  {{content}}
 </div>
 
 {% include footer.html %}
