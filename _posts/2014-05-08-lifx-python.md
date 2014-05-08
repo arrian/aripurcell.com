@@ -21,7 +21,7 @@ Setup using the Android app was a breeze with the process being the simple steps
 Not content with just using the app though, I looked around for python libraries for the bulb. A few solutions exist (eg. [derkarnold's](https://github.com/derkarnold/pylifx) and [sharph's](https://github.com/sharph/lifx-python)) but what better way to get my head around LIFX and its protocol than writing my own? So, I wrote my own which is now available on Github at [arrian/lifx-python](https://github.com/arrian/lifx-python). Feel free to download the repository and run one of the examples.
 
 A quick introduction to the library is as follows:
-```python
+{% highlight python %}
 
 from time import sleep
 import lifx
@@ -57,4 +57,4 @@ print(lights.get_access_points())
 # Pass any function here that takes a one packet type argument.
 lights.monitor(lambda packet: print('Packet could not be parsed.\n') if packet is None else print(str(packet) + '\n'))
 
-```
+{% endhighlight %}
