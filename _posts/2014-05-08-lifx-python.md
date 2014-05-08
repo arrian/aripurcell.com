@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Introduction 
+title: Python for LIFX
 tags:
 - side project
 - python
