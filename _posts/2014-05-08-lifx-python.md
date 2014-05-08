@@ -4,6 +4,7 @@ title: Introduction
 tags:
 - side project
 - python
+- lifx
 
 ---
 
@@ -34,7 +35,7 @@ lights.on()
 # Set all the lights to green
 lights.set_colour(lifx.Colour.GREEN)
 
-# You can also be more specific with your colour settings: hue, saturation, brightness, kelvin, transition_duration
+# Be more specific with your colour settings: hue, saturation, brightness, kelvin, transition_duration
 lights.set_colour(0, 10000, 10000, 1000, 5000)
 
 # Get the lights' colours
