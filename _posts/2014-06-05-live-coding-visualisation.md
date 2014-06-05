@@ -2,6 +2,8 @@
 layout: video
 title: Live Coding Visualisation
 tags:
+- research project
+- extempore
 - live coding
 - visualisation
 
