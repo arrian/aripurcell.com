@@ -272,6 +272,18 @@ h1, h2, h3, h4, h5, h6
   border-radius: 1px;
 }
 
+#content-body-video
+{
+  margin-top: 70px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 40px 40px 40px 40px;
+  width: 75%;
+  max-width: 1000px;
+
+  border-radius: 1px;
+}
+
 pre code
 {
   box-shadow: none;

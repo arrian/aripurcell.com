@@ -1,0 +1,27 @@
+{% include header.html %}
+
+<h3 id="content-title">{{page.title}}</h3>
+<p id="content-tags">    {% for tag in page.tags %}
+<a href="/tags.html">[ {{ tag }} ]</a>
+{% endfor %}</p>
+<p id="content-date">{{page.date | date: "%-d %B %Y"}}</p>
+
+<div id="content-link-container">
+    <div class="content-link content-previous"> 
+    {% if page.previous.url %} 
+            <a href="{{page.previous.url}}">&#10094; {{page.previous.title}}</a> 
+    {% endif %} 
+    </div> 
+
+    <div class="content-link content-next"> 
+    {% if page.next.url %} 
+            <a href="{{page.next.url}}">{{page.next.title}} &#10095;</a> 
+    {% endif %} 
+    </div> 
+</div>
+
+<div id="content-body-video">
+{{content}}
+</div>
+
+{% include footer.html %}
