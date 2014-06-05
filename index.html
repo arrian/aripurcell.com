@@ -24,7 +24,7 @@ title: Arrian Purcell
     </div> 
 </div>
 
-<div id="content-body">
+<div id={% if site.posts.first.layout == "video" %}"content-body-video"{% else %}"content-body"{% endif %}>
 	{{site.posts.first.content}}
 </div>
 
