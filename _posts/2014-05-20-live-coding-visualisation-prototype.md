@@ -1,6 +1,6 @@
 ---
 layout: video
-title: Live Coding Visualisation
+title: Live Coding Visualisation Prototype
 tags:
 - research project
 - extempore
