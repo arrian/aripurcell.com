@@ -21,6 +21,7 @@ body
   background-image: url('../images/sky.jpg');
   background-color: rgb(111, 184, 252);
   background-attachment: fixed;
+  background-size: cover;
 }
 
 h1, h2, h3, h4, h5, h6
