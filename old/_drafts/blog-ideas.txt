@@ -1,0 +1,72 @@
+
+
+-what is live coding (history/current/lit review)
+-audio 101
+-graphics 101
+-creating a song
+-possible/common errors
+	-Scheme to xlang type conversion error
+	-Attempting to return a string from non-symbol obj ()
+	-sorry the compiler does not currently allow you to redefine or overload the type signature of existing functions
+	-libsndfile
+	-opengl
+
+-function/type index
+-examples
+-creating instrument/drum rack
+-compiling from cmake
+-list of libraries
+-snippets
+
+-Hackday
+-Sublime Plugin new features
+-new cmake features
+-libsndfile
+-opengl
+
+
+
+-----------------------------------------------------
+Getting Started on Extempore for Windows
+
+-compiling libraries
+-sublime packages
+-sublime quick panel update when typed
+
+-----------------------------------------------------
+
+Visuals Series
+-Introduction
+-Shape
+	-2D with OpenVG
+	-3D with Horde3D
+	-OpenGL
+-Movement
+-Shading
+
+
+-Matching Music
+-Reactivity
+-Progressive Visuals vs The Fast Change
+
+-Theory of Colour, Shape and Texture
+-Theory of Entertainment
+-Theory of Informative Visuals/Information Visualisation
+-Theory of Movement and Placement
+-Elements of Visuals
+
+-Something on new media
+
+
+
+
+
+
+
+
+
+
+
+
+
+

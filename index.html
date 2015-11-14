@@ -1,32 +1,249 @@
----
-layout: default
-title: Arrian Purcell
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Arrian Purcell</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.6/semantic.min.css" />
 
----
+    <style>
+      @font-face {
+        font-family: PeasAndCarrots;
+        src: url('./fonts/peas-carrots.ttf');
+        font-weight: bold;
+      }
 
-<h3 id="content-title">{{site.posts.first.title}}</h3>
-<p id="content-tags">    {% for tag in site.posts.first.tags %}
-<a href="/tags.html">[ {{ tag }} ]</a>
-{% endfor %}</p>
-<p id="content-date">{{site.posts.first.date | date: "%-d %B %Y"}}</p>
+      h1.ui.header.name {
+        display: inline-block;
+        font-size: 5rem;
+        text-transform: uppercase;
+        font-family: PeasAndCarrots, sans-serif;
+        margin-top:25%;
+      }
+      .ui.vertical.masthead {
+        background: url('./images/header.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        min-height: 100%;
+      }
+      body {
+        height: 100%;
+        background-color: white;
+      }
 
-<div id="content-link-container">
-    <div class="content-link content-previous"> 
-    {% if site.posts.first.previous.url %} 
-            <a href="{{site.posts.first.previous.url}}">&#10094; {{site.posts.first.previous.title}}</a> 
-    {% endif %} 
-    </div> 
-
-    <div class="content-link content-next"> 
-    {% if site.posts.first.next.url %} 
-            <a href="{{site.posts.first.next.url}}">{{site.posts.first.next.title}} &#10095;</a> 
-    {% endif %} 
-    </div> 
-</div>
-
-<div id={% if site.posts.first.layout == "video" %}"content-body-video"{% else %}"content-body"{% endif %}>
-	{{site.posts.first.content}}
-</div>
-
+      .stylised {
+        font-family: PeasAndCarrots, sans-serif; 
+      }
 
 
+      .socials {
+        font-size: 20px;
+      }
+
+      pre code
+      {
+        box-shadow: none;
+        padding: 0px;
+        background-color: transparent;
+        border: none;
+      }
+
+      code, pre
+      {
+        font-family: 'Inconsolata', monospace;
+        padding: 3px;
+        border-radius: 3px;
+        background-color: rgb(240, 240, 240);
+        border: 1px solid rgba(0,0,0,0.2);
+      }
+
+      pre 
+      {
+        border-radius: 0px;
+        color:#333344;
+        background:#252525;
+        font-family:monospace;
+        overflow:auto;
+        padding:15px;
+      }
+
+      .ui.link.card, .link.large.icon {
+        outline:none;
+      }
+
+    </style>
+
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-70117530-1', 'auto');
+    ga('send', 'pageview');
+
+    </script>
+  </head>
+  <body ng-app="portfolioApp" class="portfolio">
+    
+    <div class="ui vertical masthead center aligned segment">
+
+      <div class="ui text container">
+        <h1 class="ui header name">
+          Arrian Purcell
+        </h1>
+
+        <div>Developer | Designer</div>
+
+        <br>
+
+        <div class="socials">
+          <a href="http://github.com/arrian"><i class="link black git large square icon" tabindex="0"></i></a>
+          <a href="http://instagram.com/aripurcell/"><i class="link black instagram large icon" tabindex="0"></i></a>
+          <a href="http://linkedin.com/in/arrianpurcell"><i class="link black linkedin large square icon" tabindex="0"></i></a>
+          <a href="http://www.youtube.com/user/ArrianPurcell"><i class="link black youtube large square icon" tabindex="0"></i></a>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="ui vertical stripe segment">
+      <div class="ui text container">
+        <h2 class="ui horizontal header divider">
+          <i class="code icon"></i>
+          <div class="content">
+          Projects
+          </div>
+        </h2>
+
+
+        <h3 class="ui header">
+          <div class="content">
+            Space Browser
+            <div class="sub header">23 September 2015</div>
+          </div>
+        </h3>
+        <img class="ui fluid link image" src="./images/space.png">
+
+
+
+        <h3 class="ui header">
+          <div class="content">
+            Code Visualiser
+            <div class="sub header">15 August 2015</div>
+          </div>
+        </h3>
+        <img class="ui fluid link image" src="./images/code-graph.jpg">
+
+
+        <h3 class="ui header">
+          <div class="content">
+            Understanding Through Code Visualisation
+            <div class="sub header">20 October 2014</div>
+          </div>
+        </h3>
+        <img class="ui fluid link image" src="./images/thesis.png">
+
+        <h3 class="ui header">
+          <div class="content">
+            LIFX Python
+            <div class="sub header">20 October 2012</div>
+          </div>
+        </h3>
+        <img class="ui fluid link image" src="./images/lifx.jpg">
+
+
+
+
+
+        <h2 class="ui horizontal header divider">
+          <i class="instagram icon"></i>
+          <div class="content">
+          Instagram-ery
+          </div>
+        </h2>
+        <instagram></instagram>
+
+
+
+<!--         <h2 class="ui horizontal header divider">
+          <i class="cloud icon"></i>
+          <div class="content">
+          Stream of Consciousness
+          </div>
+        </h2>
+
+
+
+Nothing to see here... -->
+
+
+<!-- 
+        <h3 class="ui header">
+          <div class="content">
+            Python for LIFX Bulbs
+            <div class="sub header">8 May 2014</div>
+          </div>
+        </h3>
+
+        I recently got tired of the lightbulb in my bedroom not being quite smart enough (and the annoying warmup period of my compact fluorescent). To remedy this, I investigated the modern range of smart LED lightbulbs and settled on a LIFX bulb.
+
+        Setup using the Android app was a breeze with the process being the simple steps of: - Plugging in the bulb - Downloading the app - Connecting to the bulb - Setting the Wifi network for the bulb to connect to
+
+        Not content with just using the app though, I looked around for python libraries for the bulb. A few solutions exist (eg. derkarnold’s and sharph’s) but what better way to get my head around LIFX and its protocol than writing my own? So, I wrote my own which is now available on Github at arrian/lifx-python. Feel free to download the repository and run the examples.
+
+        A quick introduction to the library is as follows:
+
+
+        <h3 class="ui header">
+          <div class="content">
+            Introduction
+            <div class="sub header">19 March 2014</div>
+          </div>
+        </h3>
+
+        2014 will be the fourth year of my Software Engineering degree and this year I will be taking on a year long research project. This blog will attempt to capture at least some of my thoughts and decisions through the year throughout this research project, hopefully keeping my thoughts organised. By the end of the year I hope to use it as a reference for building an argument for my thesis while also providing a (hopefully) valuable resource for you. Just to keep it interesting though, I will throw in a few additional side-projects I get involved with along the way.
+
+        The research project will be focussing on developing visualisations for code but will investigate this area within the field of live music performance. I will be using Extempore as the technical tool for the visualisations and working with Ben Swift as the musician.
+
+        Extempore is a live coding environment targeting live coding musical performance but with the capacity to simultaneously show visuals. Live coding is the process of coding for an audience, developing an interesting program with an artistic goal. The usual output of live coding is music but I hope to move some of the focus into interesting visuals.
+
+        I hope you find this blog interesting or at least useful as I present interesting findings and develop my ideas.
+ -->
+
+      </div>
+    </div>
+
+
+
+
+    <div class="footer">
+
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.1/angular.min.js"></script>
+    <script>
+      
+      angular.module("portfolioApp", [])
+      .directive('instagram', ['$http', function($http) {
+        return {
+          link: function(scope, element, attrs) {
+            scope.instagram = null;
+
+            $http.jsonp('https://api.instagram.com/v1/users/1947333134/media/recent/?client_id=ce275d7be8484636b5e9d1eb4ba44f6d&callback=JSON_CALLBACK')
+            .then(function(response) {
+              scope.instagram = response.data.data;
+            }, function(response) {
+
+            });
+
+          },
+          template: '<div class="ui six doubling cards"><a ng-repeat="post in instagram | limitTo:18" class="ui link card" tabindex="0" href="{{post.link}}"><div class="image"><img src="{{post.images.standard_resolution.url}}"></div></a></div>'
+        };
+      }]);
+    </script>
+  </body>
+</html>

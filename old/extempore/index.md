@@ -1,0 +1,1595 @@
+---
+title: Arrian Purcell
+
+---
+
+# create-stdlib.xtm
+## Functions
+-  command
+-  get\_llvm\_path
+-  check\_build\_generic
+## Defines
+- \*xtm\_start\_compile\_time\* (now))
+- llvm\-compile\-xtlang\-module
+# xtm.xtm
+## Functions
+-  setup\_audio\_vals
+-  dsp:DSP
+## Defines
+- stdlib
+- \*xtmlib\-math\-loaded\* \#f)
+- \*xtmlib\-math\-loaded\* \#t)
+- kissfft
+- \*xtmlib\-fft\-loaded\* \#f)
+- \*xtmlib\-fft\-loaded\* \#t)
+- \*xtmlib\-audio\-dsp\-loaded\* \#f)
+- \*xtmlib\-audio\-inst\-loaded\* \#f)
+- \*xtmlib\-audio\-inst\-ext\-loaded\* \#f)
+- \*xtmlib\-audio\-dsp\-ext\-loaded\* \#f)
+- libsndfile
+- \*xtmlib\-sndfile\-loaded\* \#f)
+- \*xtmlib\-sndfile\-loaded\* \#t)
+- play\-note
+- note\-name\-to\-midi\-number
+- parse\-sample\-names\-1
+- parse\-sample\-names\-2
+- parse\-MIS\-piano\-mf
+- parse\-MIS\-piano\-ff
+- parse\-NI\-piano\-pp
+- \*gm\-kick\* 35)
+- \*gm\-kick\-2\* 36)
+- \*gm\-side\-stick\* 37)
+- \*gm\-snare\* 38)
+- \*gm\-hand\-clap\* 39)
+- \*gm\-snare\-2\* 40)
+- \*gm\-low\-floor\-tom\* 41)
+- \*gm\-closed\-hi\-hat\* 42)
+- \*gm\-hi\-floor\-tom\* 43)
+- \*gm\-pedal\-hi\-hat\* 44)
+- \*gm\-low\-tom\* 45)
+- \*gm\-open\-hi\-hat\* 46)
+- \*gm\-low\-mid\-tom\* 47)
+- \*gm\-hi\-mid\-tom\* 48)
+- \*gm\-crash\* 49)
+- \*gm\-hi\-tom\* 50)
+- \*gm\-ride\* 51)
+- \*gm\-chinese\* 52)
+- \*gm\-ride\-bell\* 53)
+- \*gm\-tambourine\* 54)
+- \*gm\-splash\* 55)
+- \*gm\-cowbell\* 56)
+- \*gm\-crash\-2\* 57)
+- \*gm\-vibraslap\* 58)
+- \*gm\-ride\-2\* 59)
+- \*gm\-hi\-bongo\* 60)
+- \*gm\-low\-bongo\* 61)
+- \*gm\-mute\-hi\-conga\* 62)
+- \*gm\-hi\-conga\* 63)
+- \*gm\-low\-conga\* 64)
+- \*gm\-hi\-timbale\* 65)
+- \*gm\-low\-timbale\* 66)
+- \*gm\-hi\-agogo\* 67)
+- \*gm\-low\-agogo\* 68)
+- \*gm\-cabasa\* 69)
+- \*gm\-maracas\* 70)
+- \*gm\-short\-whistle\* 71)
+- \*gm\-long\-whistle\* 72)
+- \*gm\-short\-guiro\* 73)
+- \*gm\-long\-guiro\* 74)
+- \*gm\-claves\* 75)
+- \*gm\-hi\-wood\-block\* 76)
+- \*gm\-low\-wood\-block\* 77)
+- \*gm\-mute\-cuica\* 78)
+- \*gm\-open\-cuica\* 79)
+- \*gm\-mute\-triangle\* 80)
+- \*gm\-open\-triangle\* 81)
+- \*gm\-mute\-surdo\* 86)
+- \*gm\-open\-surdo\* 87)
+- \*gm\-drum\-map\-alist\*
+- ipc:audio\-setup
+- xtm\_audio\_setup
+- \*xtmlib\-audio\-dsp\-loaded\* \#t)
+- \*xtmlib\-audio\-inst\-loaded\* \#t)
+- \*xtmlib\-audio\-inst\-ext\-loaded\* \#t)
+- \*xtmlib\-audio\-dsp\-ext\-loaded\* \#t)
+- librtmidi
+- \*xtmlib\-rtmidi\-loaded\* \#f)
+- \*midi\-note\-off\* 8)              
+- \*midi\-note\-on\* 9)               
+- \*midi\-aftertouch\* 10)            
+- \*midi\-continuous\-controller\* 11) 
+- \*midi\-patch\-change\* 12)           
+- \*midi\-channel\-pressure\* 13)      
+- \*midi\-pitch\-bend\* 14)            
+- \*midi\-in\-device\* \#f)
+- \*midi\-out\-device\* \#f)
+- midi\-register\-events
+- midi\-deregister\-events
+- play\-midi\-note
+- \*xtmlib\-rtmidi\-loaded\* \#t)
+- libsoil
+- \*xtmlib\-soil\-loaded\* \#f)
+- \*xtmlib\-soil\-loaded\* \#t)
+- \*xtmlib\-opengl\-loaded\* \#f)
+- libgl
+- \*xtmlib\-opengl\-loaded\* \#t)
+- \*xtmlib\-shaders\-loaded\* \#f)
+- xtm\_render\_setup
+- passthrough\-vert
+- passthrough\-frag
+- greyscale\-frag
+- sepia\-frag
+- invert\-frag
+- gaussian\-frag
+- blur\-frag
+- sharpen\-frag
+- dilate\-frag
+- erode\-frag
+- edge\-frag
+- blend\-frag
+- particles\-vert
+- particles\-frag
+- green\-frag
+- dof\-frag
+- light\-vert
+- light\-frag
+- simple\-vert
+- simple\-vert\-xtm
+- simple\-frag
+- quad\-vert
+- quad\-frag
+- light\-and\-shade\-vert\-xtm
+- light\-and\-shade\-frag
+- xtmvert\-xtm
+- xtmfrag
+- xtmfrag\_nolight
+- xtmvert0
+- xtmvert1
+- xtmfrag0
+- xtmfrag1
+- xtmvert2
+- xtmfrag2
+- xtmvert3
+- xtmfrag3
+- xtmvert4
+- xtmfrag4
+- xtmvert5
+- xtmfrag5
+- dof\_frag
+- gl\-loop
+- xtm\-create\-gl\-context
+- xtm\-setup\-and\-start\-gl\-loop
+- ipc:bind\-xtmrender\-vars
+- ipc:graphics\-setup
+- \*xtmlib\-shaders\-loaded\* \#t)
+- libglu
+- libassimp
+- \*xtmlib\-assimp\-loaded\* \#f)
+-  aiProcess\_CalcTangentSpace  1)
+-  aiProcess\_JoinIdenticalVertices  2)
+-  aiProcess\_MakeLeftHanded  4)
+-  aiProcess\_Triangulate  8)
+-  aiProcess\_RemoveComponent  16)
+-  aiProcess\_GenNormals  32)
+-  aiProcess\_GenSmoothNormals  64)
+-  aiProcess\_SplitLargeMeshes  128)
+-  aiProcess\_PreTransformVertices  256)
+-  aiProcess\_LimitBoneWeights  512)
+-  aiProcess\_ValidateDataStructure  1024)
+-  aiProcess\_ImproveCacheLocality  2048)
+-  aiProcess\_RemoveRedundantMaterials  4096)
+-  aiProcess\_FixInfacingNormals  8192)
+-  aiProcess\_SortByPType  32768)
+-  aiProcess\_FindDegenerates  65536)
+-  aiProcess\_FindInvalidData  131072)
+-  aiProcess\_GenUVCoords  262144)
+-  aiProcess\_TransformUVCoords  524288)
+-  aiProcess\_FindInstances  1048576)
+-  aiProcess\_OptimizeMeshes  2097152)
+-  aiProcess\_OptimizeGraph  4194304)
+-  aiProcess\_FlipUVs  8388608)
+-  aiProcess\_FlipWindingOrder  16777216)
+-  aiProcess\_SplitByBoneCount  33554432)
+-  aiProcess\_Debone 67108864)
+- assimp\_load\_model
+- \*xtmlib\-assimp\-loaded\* \#t)
+- libopenvg
+- \*xtmlib\-openvg\-loaded\* \#f)
+- xtm\-vg\-create\-context
+- \*xtmlib\-openvg\-loaded\* \#t)
+- \*xtmlib\-stdlib\-loaded\* \#t)
+# fitslib.xtm
+## Types
+-  wtbarr &lt;i32,i32,i32,|72,i8|,i32,i32,|72,i8|,i64,i32,i32\*,double\*\*&gt;)
+## Functions
+-  fits\-open\-file
+-  fits\-image\-x
+-  fits\-image\-y
+-  fits\-image\-z
+-  fits\-image\-data\-R32
+-  fits\-image\-data\-RGBA32
+-  fits\-image\-data\-RGBA32\-false
+-  fits\-file\-print
+## Defines
+- fitslib
+- wcslib
+# kinect.xtm
+## Types
+-  Vector4 &lt;float,float,float,float&gt;)
+-  NUI\_SKELETON\_DATA &lt;i32,i32,i32,i32,Vector4,|20,Vector4|,|20,i32|,i32&gt;)
+-  NUI\_SKELETON\_FRAME &lt;i64,i32,i32,Vector4,Vector4,|6,NUI\_SKELETON\_DATA|&gt;)
+-  NUI\_TRANSFORM\_SMOOTH\_PARAMETERS &lt;float,float,float,float,float&gt;)
+## Functions
+-  kinect\-start
+-  kinect\-shutdown
+-  kinect\-smooth\-params
+-  kinect\-smooth
+-  send\-skeleton\-osc  
+-  receive\-skel\-osc
+## Defines
+- kinectlib (if (string=? "Linux" (sys:platform))
+# win32.xtm
+## Defines
+- kernel32 (sys:load\-dylib "Kernel32.dll"))
+# adt.xtm
+## Types
+-  Point &lt;!x,!x&gt;)
+-  Pair &lt;!a,!b&gt;)
+-  List &lt;!a,List\*&gt;)
+-  BTree &lt;!\_a,BTree\*,BTree\*&gt;)
+## Functions
+-  first:[!a,Point:&lt;!a,!a&gt;\*]\*
+-  second:[!b,Point:&lt;!a,!a&gt;\*]\*
+-  print:[void,Pair\*]\*
+-  first:[!a,Pair:&lt;!a,!b&gt;\*]\* 
+-  second:[!b,Pair:&lt;!a,!b&gt;\*]\*	   
+-  print:[void,List\*]\*
+-  cons:[List:&lt;!a,List\*&gt;\*,!a,List:&lt;!a,List\*&gt;\*]\*
+-  car:[!a,List:&lt;!a,List\*&gt;\*]\*
+-  cdr:[List:&lt;!a,List\*&gt;\*,List:&lt;!a,List\*&gt;\*]\*
+-  set\_car:[!a,List:&lt;!a,List\*&gt;\*,!a]\*
+-  set\_cdr:[List:&lt;!a,List\*&gt;\*,List:&lt;!a,List\*&gt;\*,,List:&lt;!a,List\*&gt;\*]\*
+-  length:[i64,List:&lt;!a,List\*&gt;\*]\*
+-  nth\_tail:[List:&lt;!a,List\*&gt;\*,List:&lt;!a,List\*&gt;\*,i64]\*
+-  nth:[!a,List:&lt;!a,List\*&gt;\*,i64]\*
+-  insert:[List:&lt;!a,List\*&gt;\*,List:&lt;!a,List\*&gt;\*,i64,!a]\*
+-  delete:[!a,List:&lt;!a,List\*&gt;\*,i64]\*
+-  reverse:[List:&lt;!a,List\*&gt;\*,List:&lt;!a,List\*&gt;\*]\*
+-  map:[List:&lt;!a,List\*&gt;\*,[!a,!b]\*,List:&lt;!b,List\*&gt;\*]\*
+-  map:[List:&lt;!a,List\*&gt;\*,[!a,!b,!c]\*,List:&lt;!b,List\*&gt;\*,List:&lt;!c,List\*&gt;\*]\*
+-  map:[List:&lt;!a,List\*&gt;\*,[!a,!b,!c,!d]\*,List:&lt;!b,List\*&gt;\*,List:&lt;!c,List\*&gt;\*,List:&lt;!d,List\*&gt;\*]\*
+-  filter:[List:&lt;!a,List\*&gt;\*,[bool,!a]\*,List:&lt;!a,List\*&gt;\*]\*
+-  member:[List:&lt;!a,List\*&gt;\*,!a,List:&lt;!a,List\*&gt;\*]\*
+-  member:[List:&lt;!a,List\*&gt;\*,!a,List:&lt;!a,List\*&gt;\*,[bool,!a,!a]\*]\*
+-  any:[bool,[bool,!a]\*,List:&lt;!a,List\*&gt;\*]\*
+-  any:[bool,[bool,!a,!b]\*,List:&lt;!a,List\*&gt;\*,List:&lt;!b,List\*&gt;\*]\*
+-  every:[bool,[bool,!a]\*,List:&lt;!a,List\*&gt;\*]\*
+-  every:[bool,[bool,!a,!b]\*,List:&lt;!a,List\*&gt;\*,List:&lt;!b,List\*&gt;\*]\*
+-  for\-each:[void,[!a,!b]\*,List:&lt;!b,List\*&gt;\*]\*
+-  for\-each:[void,[!a,!b,!c]\*,List:&lt;!b,List\*&gt;\*,List:&lt;!c,List\*&gt;\*]\*
+-  for\-each:[void,[!a,!b,!c,!d]\*,List:&lt;!b,List\*&gt;\*,List:&lt;!c,List\*&gt;\*,List:&lt;!d,List\*&gt;\*]\*
+-  last:[List:&lt;!a,List\*&gt;\*,List:&lt;!a,List\*&gt;\*]\*
+-  range:[List:&lt;!a,List\*&gt;\*,!a]\*
+-  range:[List:&lt;!a,List\*&gt;\*,!a,!a]\*
+-  range:[List:&lt;!a,List\*&gt;\*,!a,!a,!a]\*
+-  append:[List:&lt;!a,List\*&gt;\*,List:&lt;!a,List\*&gt;\*,List:&lt;!a,List\*&gt;\*]\*
+-  swap:[List:&lt;!a,List\*&gt;\*,List:&lt;!a,List\*&gt;\*,i64,i64]\*
+-  foldl:[!b,[!b,!b,!a]\*,!b,List:&lt;!a,List\*&gt;\*]\*
+-  foldr:[!b,[!b,!a,!b]\*,!b,List:&lt;!a,List\*&gt;\*]\*
+-  dict\_find:[!z,List:&lt;Pair:&lt;String\*,!z&gt;\*,List\*&gt;\*,String\*]\*
+-  print:[void,BTree\*]\*
+-  BLeaf:[BTree:&lt;!a,BTree\*,BTree\*&gt;\*,!a]\*
+-  btree\_value:[!a,BTree\*]\*
+## Defines
+- \*xtmlib\-adt\-loaded\* \#t)
+# audio_dsp.xtm
+## Functions
+-  print\_audio\_state
+-  dsp:DSP
+-  amp2db  
+-  db2amp
+-  rms\_c
+-  rms\_st\_c
+-  gain:[SAMPLE,i64,i64,SAMPLE]\*
+-  panner
+-  hann
+-  impulse
+-  dsp\_randn
+-  \_sin
+-  osc\_c
+-  square\_c
+-  integrator\_c
+-  triangle\_c
+-  rect\_c
+-  saw\_c
+-  white\_c
+-  pink\_c
+-  pulse\_c
+-  fade\_c
+-  delay\_old\_c
+-  delay\_c 
+-  delay\_t\_c 
+-  comb\_c
+-  flanger\_c
+-  chorus\_c
+-  tap\_delay\_c
+-  allpass\_old\_c
+-  allpass\_c
+-  reverb\_old\_c
+-  reverb\_c
+-  reverb2\_c
+-  crusher\_c
+-  hold3\_c
+-  crush
+-  distort\_c
+-  pan2
+-  mix2
+-  mix4
+-  mixer\_c
+-  lpf\_c
+-  hpf\_c
+-  bpf\_c
+-  notch\_c
+-  hilbert\_c
+-  hilb\_env\_follow\_c
+-  env\_follow\_c
+-  atkrel\_env\_follow\_c
+-  vcf\_old\_c
+-  vcf1\_c
+-  vcf\_c
+-  vcf3\_c
+-  min2
+-  svf\_c
+-  overdrive\_c
+-  saturation\_c
+-  ringmod\_c
+-  hann\_c
+-  hann\_t\_c
+-  hann\_e\_c
+-  linear\_c
+-  linear\_mc\_c
+-  line\_c
+-  envelope\_segments
+-  envelope\_c
+-  adsr\_c
+-  adsr\_accum\_c
+-  hermite\_interp
+-  midi2frq    
+-  frq2midi
+## Defines
+- \*xtmlib\-audio\-dsp\-loaded\* \#f)
+- \*build\-multi\-chan\* \#t)
+- \*xtmlib\-audio\-dsp\-loaded\* \#f)
+# caas-server.xtm
+## Defines
+- (caas\-compiler\-callback timestamp address . args)
+# instruments.xtm
+## Functions
+-  note\_c
+-  \_play\_note
+-  default\_note\_c
+-  default\_fx
+-  synth\_note\_c
+-  synth\_fx 262144
+-  epad\_note\_c
+-  epad\_fx 2000000
+-  organ\_note\_c
+-  organ\_fx 100000
+-  fuzz\_bass\_note\_c
+-  fuzz\_bass\_fx 10000000
+-  shimmer\_pad\_note\_c
+-  shimmer\_pad\_fx
+-  fmsynth\_note\_c
+-  fmsynth\_fx 700000
+-  fmpad\_note\_c
+-  fmpad\_fx 700000
+-  sawbass\_note\_c
+-  sawbass\_fx 500000
+-  subbass\_note\_c
+-  subbass\_fx
+-  sawlead\_note\_c
+-  sawlead\_fx 10000000
+## Defines
+- \*xtmlib\-audio\-inst\-loaded\* \#t)
+- play\-note
+# math.xtm
+## Types
+-  cpxd &lt;double,double&gt;)
+-  cpxf &lt;float,float&gt;)
+## Functions
+-  lognf
+-  lognd
+-  clampf
+-  clampd
+-  eveni64
+-  eveni32
+-  oddi64
+-  oddi32
+-  deg2rad\_f
+-  deg2rad\_d
+-  rad2deg\_f
+-  rad2deg\_d
+-  \_qsortd
+-  \_qsortf
+-  sortd
+-  sortf
+-  meand
+-  meanf
+-  mediand
+-  medianf
+-  moded
+-  modef
+-  minf
+-  mind
+-  min2f
+-  min2d
+-  min2i32
+-  min2i64
+-  maxf
+-  maxd
+-  max2f
+-  max2d
+-  max2i32
+-  max2i64
+-  randnd
+-  randnf
+-  vprintd
+-  vprintf
+-  vnormd
+-  vnormf
+-  vdotd
+-  vdotf
+-  vcrossd
+-  vcrossf
+-  vsmuld
+-  vsmulf
+-  vsdivd
+-  vsdivf
+-  vsumd
+-  vsumf
+-  vsubd
+-  vsubf
+-  vmuld  
+-  vmulf
+-  vmagd
+-  vmagf
+-  vaquatd
+-  vaquatf
+-  mprintd
+-  mprintf
+-  mprinti64
+-  mprinti32
+-  mmuld
+-  mmulf
+-  mmuli64
+-  mmuli32
+-  mmul4f
+-  mtransd
+-  mtransf
+-  mdetrmd
+-  mdetrmf
+-  minvd
+-  minvf
+-  mcopyf
+-  mcopyd
+-  rot\_matrix\_about\_axis\_d
+-  rot\_matrix\_about\_axis\_f
+-  cpxd\_add
+-  cpxd\_sub
+-  cpxd\_mul
+-  cpxd\_div
+-  cpxf\_add
+-  cpxf\_sub
+-  cpxf\_mul
+-  cpxf\_div
+-  cpxd\_add\_buf
+-  cpxd\_sub\_buf
+-  cpxd\_mul\_buf
+-  cpxd\_div\_buf
+-  cpxf\_add\_buf
+-  cpxf\_sub\_buf
+-  cpxf\_mul\_buf
+-  cpxf\_div\_buf
+-  scpxd\_mul
+-  scpxf\_mul
+-  conjugate\_cpxf
+-  conjugate\_cpxd
+-  magnitude\_squared\_cpxf
+-  magnitude\_squared\_cpxd
+-  magnitude\_cpxf
+-  magnitude\_cpxd
+-  phase\_cpxf
+-  phase\_cpxd
+-  cart\_to\_pol\_cpxf
+-  pol\_to\_cart\_cpxf
+-  cart\_to\_pol\_cpxd
+-  pol\_to\_cart\_cpxd
+-  fill\_cpx\_buffer\_cpxf
+-  fill\_cpx\_buffer\_cpxf\_reonly
+-  fill\_cpx\_buffer\_cpxd
+-  fill\_cpx\_buffer\_cpxd\_reonly
+-  pour\_cpx\_buffer\_cpxf
+-  pour\_cpx\_buffer\_cpxd
+-  pour\_cpx\_buffer\_cpxf\_reonly
+-  pour\_cpx\_buffer\_cpxd\_reonly
+-  conjugate\_buffer\_cpxf
+-  conjugate\_buffer\_cpxd
+-  buffer\_cart\_to\_pol\_cpxf
+-  buffer\_pol\_to\_cart\_cpxf
+-  buffer\_cart\_to\_pol\_cpxd
+-  buffer\_pol\_to\_cart\_cpxd
+-  buffer\_re\_only\_cpxf
+-  buffer\_im\_only\_cpxf
+-  buffer\_re\_only\_cpxd
+-  buffer\_im\_only\_cpxd
+-  buffer\_cpxd\_to\_cpxf
+-  buffer\_cpxf\_to\_cpxd
+-  dft
+-  idft
+-  window\_hanning
+-  hanning
+-  window\_hamming
+-  hamming
+## Defines
+- \*xtmlib\-math\-loaded\* \#f)
+- \*xtmlib\-math\-loaded\* \#t)
+# pc_ivl.xtm
+## Defines
+- \*pc:diatonic\-major\*
+- \*pc:diatonic\-minor\*
+- \*pc:scales\*
+- \*pc:chord\-syms\*
+- \*pc:chord\-syms\-scales\*
+- \*pc:chord\-&gt;scale\*
+- pc:pc
+- pc:?
+- pc:quantize
+- pc:quantize\-low
+- pc:random
+- pc:relative
+- pc:make\-chord
+- pc:degree
+- pc:quantize\-list
+- ivl:retrograde reverse)
+- ivl:invert
+- ivl:transpose
+- ivl:expand/contract
+- pc:invert
+- pc:transpose
+- ivl:expand/contract
+- pc:chord\-&gt;scale
+- pc:scale
+- pc:diatonic
+- pc:chord
+- pc:chord\-options
+- pc:make\-chord\-fixed
+- pc:distance\-of\-chord
+- pc:distance
+- pc:find\-closest
+- pc:move\-chord
+- pc:scale\-from\-pc
+- pc:from\-intervals
+- pc:from\-steps
+- pc:scale\-from\-chord
+- pc:melody\-by\-step
+- ivl:melody\-by\-ivl
+# topclock.xtm
+## Defines
+- \*topclock\-port\* 5555)
+- \*Epoch\-1900\-1970\* 2208988800.0)
+- \*election\-val\* (random))
+- \*master\* \#f)
+- \*masterip\* "127.0.0.1") 
+- \*oldmasterip\* "127.0.0.1") 
+- \*topclock\-lastmsg\* (+ 1. (clock:clock)))
+- \*election\-winner\* \#f)
+- \*topclock\-broadcast\* (cons "255.255.255.255" \*topclock\-port\*))
+- \*topclock\-print\-stream\* \#f)
+- 1900\-&gt;1970
+- 1970\-&gt;1900
+- topclock\-receive
+- topclock\-bpm
+- topclock\-streamer
+- topclock\-election
+- topclock\-sync
+# tr-animation.xtm
+## Defines
+- \*tr\-anim\-osc\-server\-port\* 7097)
+- ta\-send\-anim\-trigger
+- (callback time func . args)
+# vaudio_dsp.xtm
+## Functions
+-  print\_audio\_state
+-  dsp:VDSP
+-  v4val
+-  v4fabsf
+-  v4sum
+-  dsp\_randn
+-  range\_limit
+-  \_sin
+-  oscv\_c
+-  oscv\_mc\_c
+## Defines
+- \*xtmlib\-audio\-dsp\-loaded\* \#t)
+- \*build\-multi\-chan\* \#t)
+- \*srflt\* (llvm:convert\-float (number\-&gt;string (integer\-&gt;real \*samplerate\*))))
+- \*pi\* (llvm:convert\-float (number\-&gt;string pi)))
+- \*2pi\* (llvm:convert\-float (number\-&gt;string (\* 2.0 pi))))
+# wave_reader.xtm
+## Types
+-  wave\_format\_t &lt;i32,i32,i16,i16,i32,i32,i16,i16&gt;)
+-  wave\_audio\_data\_t &lt;i64,i64,i64,i64,i8\*&gt;)
+## Functions
+-  wave\_format\_type
+-  wave\_format\_num\_chan
+-  wave\_format\_samplerate
+-  wave\_format\_bit\_depth
+-  wave\_num\_chan
+-  wave\_samplerate
+-  wave\_bit\_depth
+-  wave\_num\_frames
+-  wave\_audio\_data\_ptr
+-  wave\_print\_format\_info
+-  riff\_chunk\_ID
+-  riff\_chunk\_check\_ID
+-  riff\_chunk\_size
+-  riff\_print\_chunk\_info
+-  riff\_seek\_next\_subchunk
+-  riff\_print\_file\_structure
+-  wave\_get\_file\_size
+-  read\_file\_into\_memory
+-  wave\_read\_file
+-  audio\_player\_c 
+## Defines
+- \*xtmlib\-wave\-reader\-loaded\* \#t)
+# xobject.xtm
+## Types
+-  xobject\_t &lt;i8\*,xobject\_t\*,xlist\_t\*~&lt;i8\*,i8\*&gt;\*~&gt;)
+## Functions
+-  xobj\_database
+-  xobj\_add\_class
+-  xobj\_class\_exists:[i1,i8\*]\*
+-  xobj\_add\_method
+-  xobj\_method\_exists:[i1,i8\*,i8\*]\*
+-  xobj\_get\_method
+-  xobj\_print\_class
+-  xobj\_print\_classes
+# xstring.xtm
+## Types
+-  xstring\_t &lt;size\_t,i8\*&gt;)
+## Functions
+-  print\_xstring
+-  println\_xstring
+-  xstring
+-  xstring\_length
+-  cstring\_from\_xstring
+-  xstring\_cat
+-  xstring\_cmp
+-  xstring\_levenshtein
+-  xstring\_similarity
+# xthread.xtm
+# assimp.xtm
+## Types
+-  aiString &lt;size\_t,|1024,i8|&gt;)
+-  aiMatrix4x4 &lt;float,float,float,float,float,float,float,float,float,float,float,float,float,float,float,float&gt;)
+-  aiMatrix3x3 &lt;float,float,float,float,float,float,float,float,float&gt;)
+-  aiVector4D &lt;float,float,float,float&gt;)
+-  aiVector3D &lt;float,float,float&gt;)
+-  aiVector2D &lt;float,float&gt;)
+-  aiColor4D &lt;float,float,float,float&gt;)
+-  aiColor3D &lt;float,float,float&gt;)
+-  aiQuaternion &lt;float,float,float,float&gt;)
+-  aiTexel &lt;i8,i8,i8,i8&gt;) 
+-  aiVectorKey &lt;double,aiVector3D&gt;) 
+-  aiQuatKey &lt;double,aiQuaternion&gt;) 
+-  aiMeshKey &lt;double,i32&gt;) 
+-  aiNode &lt;aiString,aiMatrix4x4,aiNode\*,i32,aiNode\*\*,i32,i32\*,i8\*&gt;) 
+-  aiFace &lt;i32,i32\*&gt;) 
+-  aiVertexWeight &lt;i32,float&gt;) 
+-  aiBone &lt;aiString,i32,aiVertexWeight\*,aiMatrix4x4&gt;) 
+-  aiAnimMesh &lt;aiVector3D\*,aiVector3D\*,aiVector3D\*,aiVector3D\*,|8,aiColor4D\*|,|8,aiVector3D\*|,i32&gt;) 
+-  aiMesh &lt;i32,i32,i32,aiVector3D\*,aiVector3D\*,aiVector3D\*,aiVector3D\*,|8,aiColor4D\*|,|8,aiVector3D\*|,|8,i32|,aiFace\*,i32,aiBone\*\*,i32,aiString,i32,aiAnimMesh\*\*,i64&gt;) 
+-  aiUVTransform &lt;aiVector2D,aiVector2D,float&gt;) 
+-  aiMaterialProperty &lt;aiString,i32,i32,i32,i32,i8\*&gt;) 
+-  aiMaterial &lt;aiMaterialProperty\*\*,i32,i32&gt;) 
+-  aiNodeAnim &lt;aiString,i32,aiVectorKey\*,i32,aiQuatKey\*,i32,aiVectorKey\*,i32,i32&gt;) 
+-  aiMeshAnim &lt;aiString,i32,aiMeshKey\*&gt;) 
+-  aiAnimation &lt;aiString,double,double,i32,aiNodeAnim\*\*,i32,aiMeshAnim\*\*&gt;) 
+-  aiTexture &lt;i32,i32,|4,i8|,aiTexel\*&gt;) 
+-  aiLight &lt;aiString,i32,aiVector3D,aiVector3D,float,float,float,aiColor3D,aiColor3D,aiColor3D,float,float&gt;) 
+-  aiCamera &lt;aiString,aiVector3D,aiVector3D,aiVector3D,float,float,float,float&gt;) 
+-  aiScene &lt;i32,aiNode\*,i32,aiMesh\*\*,i32,aiMaterial\*\*,i32,aiAnimation\*\*,i32,aiTexture\*\*,i32,aiLight\*\*,i32,aiCamera\*\*,i8\*&gt;) 
+-  aiExportFormatDesc &lt;i8\*,i8\*,i8\*&gt;)
+## Functions
+-  ai\_load\_ogl\_texture
+-  ai\_load\_ogl\_texture\_from\_buffer
+-  aiGetMaterialFloat:[i32,aiMaterial\*,i8\*,i32,i32,float\*]\*
+-  ai\_copy\_matrix4
+-  ai\_matrix4\_to\_float
+-  aisgl\_min
+-  aisgl\_max
+-  ai\_print\_string
+-  aiColor4f
+-  ai\_color4\_to\_float4
+-  ai\_apply\_material
+-  ai\_build\_mesh\_vbo
+-  ai\_build\_mesh
+-  ai\_build\_node
+-  ai\_build\_scene  
+-  assimp\_load\_model\_a
+-  assimp\_load\_model\_b
+-  assimp\_draw\_node
+-  assimp\_draw\_model
+-  ai\_load\_textures
+-  ai\_print\_export\_formats
+-  ai\_convert
+## Defines
+- libassimp
+- \*xtmlib\-assimp\-loaded\* \#t)
+-  aiProcess\_CalcTangentSpace  1)
+-  aiProcess\_JoinIdenticalVertices  2)
+-  aiProcess\_MakeLeftHanded  4)
+-  aiProcess\_Triangulate  8)
+-  aiProcess\_RemoveComponent  16)
+-  aiProcess\_GenNormals  32)
+-  aiProcess\_GenSmoothNormals  64)
+-  aiProcess\_SplitLargeMeshes  128)
+-  aiProcess\_PreTransformVertices  256)
+-  aiProcess\_LimitBoneWeights  512)
+-  aiProcess\_ValidateDataStructure  1024)
+-  aiProcess\_ImproveCacheLocality  2048)
+-  aiProcess\_RemoveRedundantMaterials  4096)
+-  aiProcess\_FixInfacingNormals  8192)
+-  aiProcess\_SortByPType  32768)
+-  aiProcess\_FindDegenerates  65536)
+-  aiProcess\_FindInvalidData  131072)
+-  aiProcess\_GenUVCoords  262144)
+-  aiProcess\_TransformUVCoords  524288)
+-  aiProcess\_FindInstances  1048576)
+-  aiProcess\_OptimizeMeshes  2097152)
+-  aiProcess\_OptimizeGraph  4194304)
+-  aiProcess\_FlipUVs  8388608)
+-  aiProcess\_FlipWindingOrder  16777216)
+-  aiProcess\_SplitByBoneCount  33554432)
+-  aiProcess\_Debone 67108864)
+- assimp\_load\_model
+# audio_dsp_ext.xtm
+## Functions
+-  spectral\_convolution\_c
+-  spectral\_convolution\_c\_
+-  creverb\_st\_c\_a
+-  creverb\_st\_c\_b
+## Defines
+- \*xtmlib\-audio\-dsp\-ext\-loaded\* \#t)
+# bullet.xtm
+## Types
+-  \_plPhysicsSdkHandle &lt;i32&gt;)
+-  \_plDynamicsWorldHandle &lt;i32&gt;)
+-  \_plRigidBodyHandle &lt;i32&gt;)
+-  \_plCollisionShapeHandle &lt;i32&gt;)
+-  \_plConstraintHandle &lt;i32&gt;)
+-  \_plMeshInterfaceHandle &lt;i32&gt;)
+-  \_plCollisionBroadphaseHandle &lt;i32&gt;)
+-  \_plBroadphaseProxyHandle &lt;i32&gt;)
+-  \_plCollisionWorldHandle &lt;i32&gt;)
+-  plRayCastResult &lt;plRigidBodyHandle,plCollisionShapeHandle,plVector3,plVector3&gt;)
+## Defines
+- bulletlib
+- \*xtmlib\-bullet\-loaded\* \#t)
+- \_extended\_bullet \#f)
+# cairo.xtm
+## Types
+-  cairo\_rectangle\_t &lt;double,double,double,double&gt;)
+-  cairo\_rectangle\_list\_t &lt;cairo\_status\_t,cairo\_rectangle\_t\*,i32&gt;)
+-  cairo\_glyph\_t &lt;i64,double,double&gt;)
+-  cairo\_text\_cluster\_t &lt;i32,i32&gt;)
+-  cairo\_text\_extents\_t &lt;double,double,double,double,double,double&gt;)
+-  cairo\_font\_extents\_t &lt;double,double,double,double,double&gt;)
+-  cairo\_user\_data\_key\_t &lt;i32&gt;)
+-  cairo\_path\_data\_t &lt;double,double&gt;) 
+-  cairo\_path\_t &lt;cairo\_status\_t,cairo\_path\_data\_t\*,i32&gt;)
+-  cairo\_matrix\_t &lt;double,double,double,double,double,double&gt;)
+-  cairo\_rectangle\_int\_t &lt;i32,i32,i32,i32&gt;)
+## Defines
+- cairolib
+- \*xtmlib\-cairo\-loaded\* \#t)
+# ceph.xtm
+## Types
+-  rados\_cluster\_stat\_t &lt;i64,i64,i64,i64&gt;)
+-  rados\_pool\_stat\_t &lt;i64,i64,i64,i64,i64,i64,i64,i64,i64,i64,i64,i64&gt;)
+## Functions
+-  rados\-connect\-to\-cluster
+-  rados\-disconnect\-cluster
+-  rados\-pool\-create
+-  rados\-connect\-to\-pool
+## Defines
+- librados
+# curl.xtm
+## Types
+-  curl\_slist &lt;i8\*,curl\_slist\*&gt;)
+-  curl\_dat &lt;i8\*,size\_t&gt;)
+## Functions
+-  curl\_print\_version
+-  curl\_setup
+-  curl\_write\_callback
+-  curl\_setopts\_basic
+-  curl\_setopts\_authenticate
+-  curl\_setopts\_header
+-  curl\_perform\_request
+-  curl\_request
+-  curl\_request\_with\_auth
+-  curl\_request\_with\_header
+-  chunked\_printf
+-  curl\_dump\_url 1001000
+## Defines
+- libcurl
+- \*xtmlib\-curl\-loaded\* \#t)
+# drawtext.xtm
+## Types
+-  dtx\_box &lt;float,float,float,float&gt;)
+## Defines
+- libdrawtext
+- \*xtmlib\-drawtext\-loaded\* \#f)
+- \*xtmlib\-drawtext\-loaded\* \#t)
+# fft.xtm
+## Functions
+-  fft
+-  ifft
+-  fftr
+-  ifftr
+## Defines
+- \*xtmlib\-fft\-loaded\* \#f)
+- kissfft
+- \*xtmlib\-fft\-loaded\* \#t)
+# fluid2d.xtm
+## Types
+-  fluidcube &lt;i64,double,double,double,double\*,double\*,double\*,double\*,double\*,double\*,i64&gt;)
+## Functions
+-  fluid\-ix
+-  fluid\-cube\-create
+-  fluid\-cube\-add\-density
+-  fluid\-cube\-add\-velocity
+-  fluid\-set\-boundary
+-  fluid\-lin\-solve
+-  fluid\-diffuse
+-  fluid\-project
+-  fluid\-advect
+-  fluid\-step\-cube
+-  fluid\-cube\-get\-row 10000
+-  fluid\-cube\-get\-last\-row
+-  fluid\-cube\-get\-first\-row
+-  fluid\-cube\-get\-column 10000
+-  fluid\-cube\-get\-last\-column
+-  fluid\-cube\-get\-first\-column
+-  fluid\-cube\-set\-row
+-  fluid\-cube\-set\-last\-row
+-  fluid\-cube\-set\-first\-row
+-  fluid\-cube\-set\-column
+-  fluid\-cube\-set\-last\-column
+-  fluid\-cube\-set\-first\-column
+-  send\-fluid\-row\-osc
+-  send\-fluid\-first\-row\-osc
+-  send\-fluid\-last\-row\-osc
+-  send\-fluid\-column\-osc
+-  send\-fluid\-first\-column\-osc
+-  send\-fluid\-last\-column\-osc
+# glib.xtm
+## Types
+-  GArray &lt;gchar\*,guint&gt;)
+-  GByteArray &lt;i8\*,guint&gt;)
+-  GPtrArray &lt;gpointer\*,guint&gt;)
+-  GMutex &lt;gpointer&gt;)
+-  GCond &lt;gpointer&gt;)
+-  GTypeClass &lt;GType&gt;)
+-  GTypeInstance &lt;GTypeClass\*&gt;)
+-  GTypeInterface &lt;GType,GType&gt;)
+-  GObject &lt;GTypeInstance,guint,GData\*&gt;)
+-  GList &lt;gpointer,GList\*,GList\*&gt;)
+-  GString &lt;gchar\*,gsize,gsize&gt;)
+-  GError &lt;GQuark,gint,gchar\*&gt;)
+-  GValue &lt;GType,|2,i64|&gt;)
+## Functions
+-  g\_signal\_connect (lambda (a:gpointer b:gchar\* c:GCallback d:gpointer) (g\_signal\_connect\_data a b c d null 0)))
+-  g\_type\_fundamental
+-  g\_print\_value\_type
+-  gchar\_alloc
+-  guchar\_alloc
+-  gint\_alloc
+-  guint\_alloc
+-  gint64\_alloc
+-  guint64\_alloc
+-  gfloat\_alloc
+-  gdouble\_alloc
+-  glong\_alloc
+-  gulong\_alloc
+-  gstring\_alloc
+-  gboolean\_alloc
+-  gpointer\_alloc
+-  gobject\_alloc
+-  gboxed\_alloc
+-  gchar\_halloc
+-  guchar\_halloc
+-  gint\_halloc
+-  guint\_halloc
+-  gint64\_halloc
+-  guint64\_halloc
+-  gfloat\_halloc
+-  gdouble\_halloc
+-  glong\_halloc
+-  gulong\_halloc
+-  gstring\_halloc
+-  gboolean\_halloc
+-  gpointer\_halloc
+-  gobject\_halloc
+-  gboxed\_halloc
+-  gchar\_zalloc
+-  guchar\_zalloc
+-  gint\_zalloc
+-  guint\_zalloc
+-  gint64\_zalloc
+-  guint64\_zalloc
+-  gfloat\_zalloc
+-  gdouble\_zalloc
+-  glong\_zalloc
+-  gulong\_zalloc
+-  gstring\_zalloc
+-  gboolean\_zalloc
+-  gpointer\_zalloc
+-  gobject\_zalloc
+-  gboxed\_zalloc
+## Defines
+- libglib
+- libgobject
+- \*xtmlib\-glib\-loaded\* \#t)
+# gsl.xtm
+## Types
+-  gsl\_complex &lt;|2,double|&gt;)
+-  gsl\_sf\_result &lt;double,double&gt;)
+-  gsl\_sf\_result\_e10 &lt;double,double,i32&gt;)
+-  gsl\_permutation &lt;size\_t,size\_t\*&gt;)
+-  gsl\_combination &lt;size\_t,size\_t,size\_t\*&gt;)
+-  gsl\_block &lt;size\_t,double\*&gt;)
+-  gsl\_block\_complex &lt;size\_t,double\*&gt;)
+-  gsl\_vector &lt;size\_t,size\_t,double\*,gsl\_block\*,i32&gt;)
+-  gsl\_vector\_complex &lt;size\_t,size\_t,double\*,gsl\_block\_complex\*,i32&gt;)
+-  gsl\_matrix &lt;size\_t,size\_t,size\_t,double\*,gsl\_block\*,i32&gt;)
+-  gsl\_matrix\_complex &lt;size\_t,size\_t,size\_t,double\*,gsl\_block\_complex\*,i32&gt;)
+-  gsl\_rng\_type &lt;i8\*,i64,i64,size\_t,[void,i8\*,i64]\*,[i64,i8\*]\*,[double,i8\*]&gt;)
+-  gsl\_rng &lt;gsl\_rng\_type\*,i8\*&gt;)
+## Functions
+-  gsl\_rng
+-  gsl\_rng\_seed
+-  GSL\_REAL (lambda (z:gsl\_complex) (aref (tref z 0) 0)))
+-  GSL\_IMAG (lambda (z:gsl\_complex) (aref (tref z 0) 1)))
+-  GSL\_SET\_COMPLEX
+-  GSL\_SET\_REAL (lambda (z:gsl\_complex\* x) (aset! (tref\-ptr z 0) 0 x) z))
+-  GSL\_SET\_IMAG (lambda (z:gsl\_complex\* y) (aset! (tref\-ptr z 0) 1 y) z))
+-  Crect
+-  Cpolar
+-  Creal
+-  Cimag
+-  Cmag
+-  Carg
+-  Cadd
+-  CaddR
+-  Csub
+-  CsubR
+-  Cmul
+-  CmulR
+-  Cdiv
+-  Cconj
+-  Cinverse
+-  Cnegative
+-  Csqrt
+-  Cpow
+-  CpowR
+-  Cexp
+-  Clog
+-  Csin
+-  Ccos
+-  Ctan
+-  Csec
+-  Ccsc
+-  Ccot
+-  Casin
+-  Cacos
+-  Catan
+-  Casec
+-  Cacsc
+-  Cacot
+-  Csinh
+-  Ccosh
+-  Ctanh
+-  Csech
+-  Ccsch
+-  Ccoth
+-  Casinh
+-  Cacosh
+-  Catanh
+-  Casech
+-  Cacsch
+-  Cacoth
+-  CprintR
+-  CprintP
+-  CprintPr
+-  CprintPd
+-  Valloc
+-  Vfree
+-  Vref
+-  Vset
+-  Vcopy
+-  Vadd
+-  Vsub
+-  Vmul
+-  Vdiv
+-  Vscale
+-  Vsetall
+-  Vdot
+-  VtoPtr
+-  Vmk
+-  Vcross
+-  Vfill
+-  Vprint
+-  Vmk3
+-  Vmk4
+## Defines
+- gsllib (if (string=? "Linux" (sys:platform))
+# gstreamer.xtm
+## Types
+-  GstElement &lt;GStaticRecMutex\*,GCond\*,guint32,GstState,GstState,GstState,GstStateChangeReturn,GstBus\*,GstClock\*,GstClockTimeDiff,guint16,GList,guint16,GList,guint16,GList,guint32&gt;)
+-  GstElementDetails &lt;gchar\*,gchar\*,gchar\*,gchar\*&gt;)
+-  GstStructure &lt;GType,GQuark,gint,GArray\*,gpointer&gt;)
+-  GstObject &lt;gint,GMutex\*,gchar\*,gchar\*,GstObject\*,guint32&gt;)
+-  GstMiniObject &lt;GType,gint,gint,guint,i8\*,i8\*,i8\*,guint,gpointer&gt;)
+-  GstCaps &lt;GType,gint,GstCapsFlags,i8\*,|4,gpointer|&gt;)
+-  GstBuffer &lt;GstMiniObject,i8\*,guint,GstClockTime,GstClockTime,GstCaps\*,i64,i64,i8\*,GFreeFunc,GstBuffer\*,GstBufferPrivate\*,gpointer&gt;)
+-  GstBin &lt;gint,GList\*,guint32,GstBus\*,GList\*,gboolean,gboolean,gboolean,GstClock\*,GstElement\*&gt;)
+-  GstMemory &lt;GstMiniObject,i8\*,GstMemory\*,gsize,gsize,gsize,gsize&gt;)
+-  GstMapInfo &lt;GstMemory\*,GstMapFlags,guint8,gsize,gsize&gt;)
+-  GstMessage &lt;GstMiniObject,GstMessageType,guint64,GstObject\*,guint32,GMutex,GCond&gt;)
+-  GstAppSinkCallbacks &lt;i8\*,i8\*,i8\*&gt;) 
+## Defines
+- gstlib
+- gstapplib
+- \*xtmlib\-gstreamer\-loaded\* \#t)
+# horde3d.xtm
+## Functions
+-  rotate\-joint
+## Defines
+- hordelib
+- hordeutlib
+- \*xtmlib\-horde3d\-loaded\* \#t)
+- new\-horde \#t)
+# instruments_ext.xtm
+## Functions
+-  set\_sample\_data\_
+-  clear\_sample\_data\_
+-  set\_sample\_offset\_
+-  sampler\_note\_linear\_c
+-  sampler\_note\_hermite\_c
+-  sampler\_fx 400000
+-  sampler1\_fx 400000
+-  sampler2\_fx 400000
+-  sampler3\_fx 400000
+## Defines
+- \*xtmlib\-audio\-inst\-ext\-loaded\* \#t)
+- note\-name\-to\-midi\-number
+- parse\-sample\-names\-1
+- parse\-sample\-names\-2
+- parse\-MIS\-piano\-mf
+- parse\-MIS\-piano\-ff
+- parse\-NI\-piano\-pp
+- \*gm\-kick\* 35)
+- \*gm\-kick\-2\* 36)
+- \*gm\-side\-stick\* 37)
+- \*gm\-snare\* 38)
+- \*gm\-hand\-clap\* 39)
+- \*gm\-snare\-2\* 40)
+- \*gm\-low\-floor\-tom\* 41)
+- \*gm\-closed\-hi\-hat\* 42)
+- \*gm\-hi\-floor\-tom\* 43)
+- \*gm\-pedal\-hi\-hat\* 44)
+- \*gm\-low\-tom\* 45)
+- \*gm\-open\-hi\-hat\* 46)
+- \*gm\-low\-mid\-tom\* 47)
+- \*gm\-hi\-mid\-tom\* 48)
+- \*gm\-crash\* 49)
+- \*gm\-hi\-tom\* 50)
+- \*gm\-ride\* 51)
+- \*gm\-chinese\* 52)
+- \*gm\-ride\-bell\* 53)
+- \*gm\-tambourine\* 54)
+- \*gm\-splash\* 55)
+- \*gm\-cowbell\* 56)
+- \*gm\-crash\-2\* 57)
+- \*gm\-vibraslap\* 58)
+- \*gm\-ride\-2\* 59)
+- \*gm\-hi\-bongo\* 60)
+- \*gm\-low\-bongo\* 61)
+- \*gm\-mute\-hi\-conga\* 62)
+- \*gm\-hi\-conga\* 63)
+- \*gm\-low\-conga\* 64)
+- \*gm\-hi\-timbale\* 65)
+- \*gm\-low\-timbale\* 66)
+- \*gm\-hi\-agogo\* 67)
+- \*gm\-low\-agogo\* 68)
+- \*gm\-cabasa\* 69)
+- \*gm\-maracas\* 70)
+- \*gm\-short\-whistle\* 71)
+- \*gm\-long\-whistle\* 72)
+- \*gm\-short\-guiro\* 73)
+- \*gm\-long\-guiro\* 74)
+- \*gm\-claves\* 75)
+- \*gm\-hi\-wood\-block\* 76)
+- \*gm\-low\-wood\-block\* 77)
+- \*gm\-mute\-cuica\* 78)
+- \*gm\-open\-cuica\* 79)
+- \*gm\-mute\-triangle\* 80)
+- \*gm\-open\-triangle\* 81)
+- \*gm\-mute\-surdo\* 86)
+- \*gm\-open\-surdo\* 87)
+- \*gm\-drum\-map\-alist\*
+- ipc:audio\-setup
+# jansson.xtm
+## Types
+-  json\_t &lt;enum,size\_t&gt;)
+-  json\_error\_t &lt;i32,i32,i32,i8\*,i8\*&gt;)
+## Functions
+-  json\_typeof
+-  json\_is\_object
+-  json\_is\_array
+-  json\_is\_string
+-  json\_is\_integer
+-  json\_is\_real
+-  json\_is\_true
+-  json\_is\_false
+-  json\_is\_null
+-  json\_print\_type
+-  json\_obj\_iterator
+-  json\_object\_print\_keys
+-  json\_dump\_url 101000
+## Defines
+- libjansson
+- \*xtmlib\-json\-loaded\* \#t)
+# libc.xtm
+## Types
+-  in\_addr &lt;i32&gt;)
+-  in6\_addr &lt;/16,i8/&gt;)
+-  sockaddr &lt;i16,/14,i8/&gt;)
+-  sockaddr\_in &lt;i16,i16,in\_addr,/8,i8/&gt;)
+-  sockaddr\_in6 &lt;i16,i16,i32,in6\_addr,i32&gt;)
+-  ifaddrs &lt;ifaddrs\*,i8\*,i32,sockaddr\*,sockaddr\*,sockaddr\*,i8\*&gt;)
+-  hostent &lt;i8\*,i8\*\*,i32,i32,i8\*&gt;)
+## Functions
+-  hostname
+-  host\_to\_ip
+-  \_print\_interface\_addresses
+-  print\_interface\_addresses
+-  \_interface\_address
+-  interface\_address
+## Defines
+- libc
+- \*xtmlib\-libc\-loaded\* \#t)
+- sys:host\-to\-ip
+- sys:hostname
+- sys:print\-interface\-addresses
+- sys:interface\-address
+# lilv.xtm
+## Types
+-  LV2\_Feature &lt;i8\*,i8\*&gt;)
+-  LV2\_Descriptor &lt;i8\*,[LV2\_Handle,LV2\_Descriptor\*,double,i8\*,LV2\_Feature\*\*]\*,[void,LV2\_Handle,i32,i8\*]\*,[void,LV2\_Handle]\*,[void,LV2\_Handle,i32]\*,[void,LV2\_Handle]\*,[void,LV2\_Handle]\*,[i8\*,i8\*]\*&gt;)
+-  LilvInstanceImpl &lt;LV2\_Descriptor\*,LV2\_Handle,i8\*&gt;)
+## Functions
+-  lilv\_print\_all\_plugin\_ports
+-  lilv\_print\_all\_lv2\_plugins
+-  lilv\_init\_world
+-  lilv\_load\_plugin
+-  lilv\_activate
+-  lilv\_connect\_to\_port
+## Defines
+- lilvlib
+# opencv.xtm
+## Types
+-  CvPoint &lt;i32,i32&gt;) 
+-  CvSize &lt;i32,i32&gt;) 
+-  CvScalar &lt;|4,double|&gt;)
+-  CvRect &lt;i32,i32,i32,i32&gt;) 
+-  CvSize2D32f &lt;float,float&gt;)
+-  CvPoint2D32f &lt;float,float&gt;)
+-  CvPoint3D32f &lt;float,float,float&gt;)
+-  CvPoint2D64f &lt;double,double&gt;)
+-  CvPoint3D64f &lt;double,double,double&gt;)
+-  CvBox2D &lt;float,CvPoint2D32f,CvSize2D32f&gt;)
+-  CvMemBlock &lt;CvMemBlock\*,CvMemBlock\*&gt;)
+-  CvMemStorage &lt;CvMemBlock\*,CvMemBlock\*,CvMemStorage\*,i32,i32&gt;)
+-  CvMemStoragePos &lt;CvMemBlock\*,i32&gt;)
+-  CvSeqBlock &lt;CvSeqBlock\*,CvSeqBlock\*,i32,i32,i32&gt;)
+-  CvSlice &lt;i32,i32&gt;) 
+-  CvSetElem &lt;i32,CvSetElem\*&gt;)
+-  CvSet &lt;i32,CvSetElem\*&gt;)
+-  CvGraphVtx &lt;i32,i8\*&gt;)
+-  CvGraphEdge &lt;i32,float,|2,CvGraphEdge\*|,|2,CvGraphVtx\*|\*&gt;)
+-  CvString &lt;i32,i8\*&gt;)
+-  CvMatND &lt;i32,i32,i32\*,i8\*,|32,&lt;i32,i32&gt;|&gt;)
+-  CvHistogram &lt;i32,CvArr\*,|64,float|,float\*\*,CvMatND&gt;)
+-  IplImage &lt;i32,i32,i32,i32,i32,|4,i8|,|4,i8|,i32,i32,i32,i32,i32,i8\*,i8\*,i8\*,i8\*,i32,i8\*,i32,|4,i32|,|4,i32|,i8\*&gt;)
+-  CvSeq &lt;i32,i32,i8\*,i8\*,i8\*,i8\*,i32,i32,i8\*,i8\*,i32,i8\*,i8\*,i8\*&gt;)
+-  CvStarDetectorParams &lt;i32,i32,i32,i32,i32&gt;)
+## Functions
+-  cvMakeColour (lambda (r g b) 
+-  cvGetHistValue\_1D
+-  cvGetHistValue\_2D
+-  cvGetHistValue\_3D
+## Defines
+- ocv\_core\_lib
+- ocv\_hgui\_lib
+- ocv\_features\_lib
+- ocv\_iproc\_lib
+- ocv\_wrapper\_lib
+# opengl.xtm
+## Types
+-  E\_vbo &lt;i32,i32,i8\*&gt;)
+-  E\_fbo &lt;i32,i32,i32,i32,i32&gt;)
+## Functions
+-  gl\_setup
+-  gl\_set\_view
+-  gl\_look\_at
+-  fbo\_create\_texture\_rect
+-  fbo\_create\_depth\_buffer\_rect
+-  fbo\_create\_texture
+-  fbo\_create\_depth\_buffer
+-  create\_vbo
+-  create\_fbo\_rect
+-  create\_fbo\_no\_depth\_rect
+-  create\_fbo
+-  create\_fbo\_no\_depth
+-  print\_shader\_info\_log
+-  print\_program\_info\_log
+-  create\_shader
+-  create\_shader\_xtm
+-  circle\_line
+-  circle\_whole
+-  cube\_whole
+-  gl\_print\_driver\_info
+-  mat4\_to\_mat3
+-  translate\_matrix
+-  scale\_matrix
+-  rotate\_matrix
+-  fill\_identity\_matrix
+-  fill\_projection\_matrix
+-  fill\_orthographic\_matrix
+-  fill\_direction\_vector
+-  fill\_view\_matrix
+-  fill\_view\_matrix\_dir
+-  gl\_print\_error
+## Defines
+- \*xtmlib\-opengl\-loaded\* \#t)
+- libgl
+- libglu
+# openvg.xtm
+## Types
+-  xpoint &lt;VGfloat,VGfloat&gt;)
+## Functions
+-  xtm\_vg\_print\_error
+-  xtm\_vg\_create\_contexti32
+-  xtm\_vg\_create\_contextf
+-  xtm\_vg\_reset\_matrices
+-  xtm\_vg\_clear\_rect
+-  xtm\_vg\_clear
+-  xtm\_paint\_set\_color
+-  xtm\_paint\_set\_pattern
+-  xtm\_paint\_set\_stroke
+-  xtm\_paint\_set\_fill
+-  xtm\_destroy\_paint
+-  xtm\_create\_path
+-  xtm\_draw\_path\_keep
+-  xtm\_draw\_path
+-  xtm\_clear\_path
+-  xtm\_destroy\_path
+-  xtm\_stroke\_path\_keep
+-  xtm\_stroke\_path
+-  xtm\_fill\_path\_keep
+-  xtm\_fill\_path
+-  xtm\_add\_line
+-  xtm\_add\_lined
+-  xtm\_add\_poly
+-  xtm\_add\_polyd
+-  xtm\_add\_tri
+-  xtm\_add\_trid
+-  xtm\_add\_quad
+-  xtm\_add\_quadd
+-  xtm\_add\_rect
+-  xtm\_add\_rectd
+-  xtm\_add\_round\_rect
+-  xtm\_add\_round\_rectd
+-  xtm\_add\_ellipse
+-  xtm\_add\_ellipsed
+-  xtm\_add\_arc
+-  xtm\_add\_arcd
+-  xtm\_path\_num\_segments
+-  xtm\_path\_length
+-  xtm\_point\_along\_path
+-  xtm\_point\_along\_path\_norm
+-  xtm\_draw\_line
+-  xtm\_draw\_lined
+-  xtm\_draw\_poly
+-  xtm\_draw\_polyd
+-  xtm\_draw\_tri
+-  xtm\_draw\_trid
+-  xtm\_draw\_quad
+-  xtm\_draw\_quadd
+-  xtm\_draw\_rect
+-  xtm\_draw\_rectd
+-  xtm\_draw\_round\_rect
+-  xtm\_draw\_round\_rectd
+-  xtm\_draw\_ellipse
+-  xtm\_draw\_ellipsed
+-  xtm\_draw\_arc
+-  xtm\_draw\_arcd
+-  xtm\_path\_translate
+-  xtm\_path\_translated
+-  xtm\_path\_scale
+-  xtm\_path\_scaled
+-  xtm\_path\_shear
+-  xtm\_path\_sheard
+-  xtm\_path\_rotate
+-  xtm\_path\_rotated
+-  xtm\_create\_vgimage
+-  xtm\_destroy\_vgimage
+-  xtm\_set\_vgimage\_subdata
+-  xtm\_load\_vgimage
+-  xtm\_draw\_vgimage
+-  xtm\_vgimage\_translate
+-  xtm\_vgimage\_translated
+-  xtm\_vgimage\_scale
+-  xtm\_vgimage\_scaled
+-  xtm\_vgimage\_shear
+-  xtm\_vgimage\_sheard
+-  xtm\_vgimage\_rotate
+-  xtm\_vgimage\_rotated
+-  xtm\_scale\_and\_draw\_vgimage
+-  xtm\_scale\_and\_draw\_vgimaged
+-  xtm\_set\_color32
+-  xtm\_color32\_red
+-  xtm\_set\_color32\_red
+-  xtm\_color32\_green
+-  xtm\_set\_color32\_green
+-  xtm\_color32\_blue
+-  xtm\_set\_color32\_blue
+-  xtm\_color32\_alpha
+-  xtm\_set\_color32\_alpha
+## Defines
+- libopenvg
+- \*xtmlib\-openvg\-loaded\* \#f)
+- xtm\-vg\-create\-context
+- \*xtmlib\-openvg\-loaded\* \#t)
+# particles.xtm
+## Types
+-  psystem &lt;i64,i64\*,float\*,float\*,float\*,float\*,float\*,float\*,float\*,float\*,float\*,i32&gt;)
+## Functions
+-  psystem\_size (lambda (psys:psystem\*) (tref psys 0)))
+-  psystem\_states (lambda (psys:psystem\*) (tref psys 1)))
+-  psystem\_xs (lambda (psys:psystem\*) (tref psys 2)))
+-  psystem\_ys (lambda (psys:psystem\*) (tref psys 3)))
+-  psystem\_xvs (lambda (psys:psystem\*) (tref psys 4)))
+-  psystem\_yvs (lambda (psys:psystem\*) (tref psys 5)))
+-  psystem\_sizes (lambda (psys:psystem\*) (tref psys 6)))
+-  psystem\_reds (lambda (psys:psystem\*) (tref psys 7)))
+-  psystem\_greens (lambda (psys:psystem\*) (tref psys 8)))
+-  psystem\_blues (lambda (psys:psystem\*) (tref psys 9)))
+-  psystem\_alphas (lambda (psys:psystem\*) (tref psys 10)))
+-  psystem\_texid (lambda (psys:psystem\*) (tref psys 11)))
+-  psystem\_create
+-  psystem\_destroy
+-  psystem\-particle\-check
+-  psystem\-set\-particle
+-  psystem\-add\-particle
+-  psystem\_draw 500000000
+-  psystem\_update
+# particles_vbo.xtm
+## Types
+-  particle\_t &lt;float,float,float,float,float,float,float,float,float,i32&gt;)
+-  psystem &lt;i32,i32,particle\_t\*,E\_vbo\*&gt;)
+## Functions
+-  psystem\_create
+-  psystem\_destroy
+-  psystem\-set\-particle
+-  psystem\_draw
+-  psystem\_update
+## Defines
+- \*xtmlib\-particles\-vbo\-loaded\* \#t)
+# qr-code.xtm
+## Types
+-  QRcode &lt;i32,i32,i8\*&gt;)
+## Functions
+-  QRcode\_version
+-  QRcode\_size
+-  QRcode\_data
+-  QRcode\_pixel
+-  qr\_create\_l
+-  qr\_create\_with\_level
+## Defines
+- libqrencode
+- \*xtmlib\-libqrencode\-loaded\* \#f)
+- \*xtmlib\-libqrencode\-loaded\* \#t)
+# rtmidi.xtm
+## Types
+-  midi\_in\_device &lt;i8\*&gt;)
+-  midi\_out\_device &lt;i8\*&gt;)
+## Functions
+-  midi\_query\_inports
+-  midi\_query\_outports
+-  midi\_new\_indevice
+-  midi\_new\_outdevice
+-  midi\_open\_inport
+-  midi\_open\_virtual\_inport
+-  midi\_open\_outport
+-  midi\_open\_virtual\_outport
+-  midi\_delete\_indevice
+-  midi\_delete\_outdevice
+-  midi\_close\_inport
+-  midi\_close\_outport
+-  midi\_default\_callback
+-  midi\_register\_device
+-  midi\_unregister\_device
+-  midi\_send
+## Defines
+- librtmidi
+- \*midi\-note\-off\* 8)              
+- \*midi\-note\-on\* 9)               
+- \*midi\-aftertouch\* 10)            
+- \*midi\-continuous\-controller\* 11) 
+- \*midi\-cc\* 11) 
+- \*midi\-patch\-change\* 12)           
+- \*midi\-channel\-pressure\* 13)      
+- \*midi\-pitch\-bend\* 14)            
+- \*midi\-in\-device\* \#f)
+- \*midi\-out\-device\* \#f)
+- midi\-register\-events
+- midi\-deregister\-events
+- play\-midi\-note
+# shaders.xtm
+## Types
+-  xtm\_mesh &lt;E\_vbo\*,i32,float\*,float\*,float\*,float\*,float,float,i32&gt;)
+-  xtm\_node &lt;i8\*,float\*,xtm\_node\*,i32,xtm\_node\*,i32,xtm\_mesh\*&gt;)
+-  xtm\_camera &lt;float\*,float\*,float\*&gt;)
+-  xtm\_lights &lt;float\*,float\*,float\*,float\*,float\*,float\*,float\*,float\*,float\*,i32&gt;)
+## Functions
+-  gl\_draw\_shader\_quad
+-  shader\_set\_grid\_offsets
+-  shader\_setup\_convolution\_filter
+-  shader\_update\_camera
+-  shader\_update\_light
+-  shader\_update\_lights
+-  shader\_update\_matrices
+-  shader\_update\_matrices\_lv
+-  shader\_update\_matrices\_lvs
+-  shader\_update\_material
+-  xtm\_build\_mesh\_vbo
+-  xtm\_make\_node\_a
+-  xtm\_get\_camera
+-  xtm\_camera\_pos
+-  xtm\_camera\_tgt
+-  xtm\_camera\_up
+-  xtm\_camera\_view
+-  xtm\_update\_camera
+-  xtm\_get\_lights
+-  xtm\_light\_pos
+-  xtm\_light\_tgt
+-  xtm\_light\_up
+-  xtm\_light\_ambient
+-  xtm\_light\_diffuse
+-  xtm\_light\_specular
+-  xtm\_light\_power
+-  xtm\_light\_angle
+-  xtm\_light\_view
+-  xtm\_update\_lights
+-  xtm\_update\_matrices
+-  xtm\_draw\_mesh
+-  xtm\_draw\_node
+-  xtm\_draw\_model
+-  xtm\_render\_init\_light\_shaders
+-  xtm\_render\_init\_simple\_shader
+-  xtm\_render\_init\_quad\_shader
+-  xtm\_render\_init\_dof\_shader
+-  xtm\_draw\_tex
+-  xtm\_dof\_fx
+-  xtm\_render\_fbo
+-  xtm\_shader\_fbo
+-  xtm\_render\_setup\_a
+-  xtm\_render\_setup\_b
+-  xtm\_render\_setup\_c
+-  xtm\_render
+## Defines
+- \*xtmlib\-shaders\-loaded\* \#t)
+- xtm\_render\_setup
+- passthrough\-vert
+- passthrough\-frag
+- greyscale\-frag
+- sepia\-frag
+- invert\-frag
+- gaussian\-frag
+- blur\-frag
+- sharpen\-frag
+- dilate\-frag
+- erode\-frag
+- edge\-frag
+- blend\-frag
+- particles\-vert
+- particles\-frag
+- green\-frag
+- dof\-frag
+- light\-vert
+- light\-frag
+- simple\-vert
+- simple\-vert\-xtm
+- simple\-frag
+- quad\-vert
+- quad\-frag
+- light\-and\-shade\-vert\-xtm
+- light\-and\-shade\-frag
+- xtmvert\-xtm
+- xtmfrag
+- xtmfrag\_nolight
+- xtmvert0
+- xtmvert1
+- xtmfrag0
+- xtmfrag1
+- xtmvert2
+- xtmfrag2
+- xtmvert3
+- xtmfrag3
+- xtmvert4
+- xtmfrag4
+- xtmvert5
+- xtmfrag5
+- quad\-vert
+- dof\_frag
+- gl\-loop
+- xtm\-create\-gl\-context
+- xtm\-setup\-and\-start\-gl\-loop
+- ipc:bind\-xtmrender\-vars
+- ipc:graphics\-setup
+# sndfile.xtm
+## Types
+-  sf\_info &lt;i64,i32,i32,i32,i32,i32&gt;)
+-  sf\_format\_info &lt;i32,i8\*,i8\*&gt;)
+-  \_sf\_loop\_ &lt;i32,i32,i32,i32&gt;)
+-  SF\_INSTRUMENT &lt;i32,i8,i8,i8,i8,i8,i8,i32,|16,\_sf\_loop\_|&gt;)
+-  SF\_LOOP\_INFO &lt;|2,i8|,|2,i8|,i32,i32,float,i32,|6,i32|&gt;)
+## Functions
+-  sf\_frames
+-  sf\_samplerate
+-  sf\_channels
+-  sf\_format
+-  sf\_sections
+-  sf\_seekable
+-  print\_audio\_file\_info
+-  read\_audio\_data
+-  audiofile\_c
+-  audiofile\_ptr\_c
+-  write\_audio\_data
+## Defines
+- libsndfile
+- \*xtmlib\-sndfile\-loaded\* \#t)
+# soil.xtm
+## Functions
+-  gl\_load\_image\_rect
+-  gl\_load\_image
+-  gl\_tex\_height
+-  gl\_tex\_width
+-  gl\_tex\_width\_rect
+-  gl\_tex\_height\_rect
+-  gl\_load\_tex\_rect
+-  gl\_load\_tex
+-  gl\_load\_tex\_ext
+-  gl\_load\_tex\_bgr
+-  gl\_load\_tex\_ext\_bgr
+-  gl\_draw\_img
+-  gl\_draw\_img\_ext
+-  gl\_draw\_img\_from\_img
+-  gl\_draw\_img\_reverse
+## Defines
+- libsoil
+- \*xtmlib\-soil\-loaded\* \#f)
+- \*xtmlib\-soil\-loaded\* \#t)
