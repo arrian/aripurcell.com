@@ -8,17 +8,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.6/semantic.min.css" />
 
     <style>
+
       @font-face {
-        font-family: PeasAndCarrots;
-        src: url('./fonts/peas-carrots.ttf');
-        font-weight: bold;
+        font-family: Josefin;
+        src: url('./fonts/JosefinSans-Thin.ttf');
       }
 
       h1.ui.header.name {
         display: inline-block;
         font-size: 5rem;
-        text-transform: uppercase;
-        font-family: PeasAndCarrots, sans-serif;
+        font-variant: small-caps;
+        text-transform: lowercase;
+        font-family: Josefin, sans-serif;
         margin-top:25%;
       }
       .ui.vertical.masthead {
@@ -34,7 +35,7 @@
       }
 
       .stylised {
-        font-family: PeasAndCarrots, sans-serif; 
+        font-family: Josefin, sans-serif; 
       }
 
 
@@ -72,6 +73,9 @@
       .ui.link.card, .link.large.icon {
         outline:none;
       }
+
+
+
 
     </style>
 
@@ -125,10 +129,11 @@
             <div class="sub header">23 September 2015</div>
           </div>
         </h3>
+        <a href="https://cdn.rawgit.com/arrian/exoplanet-browser/0.1.0/index.html">
         <img class="ui fluid link image" src="./images/space.png">
+        </a>
 
-
-
+<!-- 
         <h3 class="ui header">
           <div class="content">
             Code Visualiser
@@ -136,7 +141,7 @@
           </div>
         </h3>
         <img class="ui fluid link image" src="./images/code-graph.jpg">
-
+ -->
 
         <h3 class="ui header">
           <div class="content">
@@ -144,7 +149,9 @@
             <div class="sub header">20 October 2014</div>
           </div>
         </h3>
+        <a href="https://github.com/arrian/research-project">
         <img class="ui fluid link image" src="./images/thesis.png">
+        </a>
 
         <h3 class="ui header">
           <div class="content">
@@ -152,98 +159,14 @@
             <div class="sub header">20 October 2012</div>
           </div>
         </h3>
+        <a href="https://github.com/arrian/lifx-python">
         <img class="ui fluid link image" src="./images/lifx.jpg">
-
-
-
-
-
-        <h2 class="ui horizontal header divider">
-          <i class="instagram icon"></i>
-          <div class="content">
-          Instagram-ery
-          </div>
-        </h2>
-        <instagram></instagram>
-
-
-
-<!--         <h2 class="ui horizontal header divider">
-          <i class="cloud icon"></i>
-          <div class="content">
-          Stream of Consciousness
-          </div>
-        </h2>
-
-
-
-Nothing to see here... -->
-
-
-<!-- 
-        <h3 class="ui header">
-          <div class="content">
-            Python for LIFX Bulbs
-            <div class="sub header">8 May 2014</div>
-          </div>
-        </h3>
-
-        I recently got tired of the lightbulb in my bedroom not being quite smart enough (and the annoying warmup period of my compact fluorescent). To remedy this, I investigated the modern range of smart LED lightbulbs and settled on a LIFX bulb.
-
-        Setup using the Android app was a breeze with the process being the simple steps of: - Plugging in the bulb - Downloading the app - Connecting to the bulb - Setting the Wifi network for the bulb to connect to
-
-        Not content with just using the app though, I looked around for python libraries for the bulb. A few solutions exist (eg. derkarnold’s and sharph’s) but what better way to get my head around LIFX and its protocol than writing my own? So, I wrote my own which is now available on Github at arrian/lifx-python. Feel free to download the repository and run the examples.
-
-        A quick introduction to the library is as follows:
-
-
-        <h3 class="ui header">
-          <div class="content">
-            Introduction
-            <div class="sub header">19 March 2014</div>
-          </div>
-        </h3>
-
-        2014 will be the fourth year of my Software Engineering degree and this year I will be taking on a year long research project. This blog will attempt to capture at least some of my thoughts and decisions through the year throughout this research project, hopefully keeping my thoughts organised. By the end of the year I hope to use it as a reference for building an argument for my thesis while also providing a (hopefully) valuable resource for you. Just to keep it interesting though, I will throw in a few additional side-projects I get involved with along the way.
-
-        The research project will be focussing on developing visualisations for code but will investigate this area within the field of live music performance. I will be using Extempore as the technical tool for the visualisations and working with Ben Swift as the musician.
-
-        Extempore is a live coding environment targeting live coding musical performance but with the capacity to simultaneously show visuals. Live coding is the process of coding for an audience, developing an interesting program with an artistic goal. The usual output of live coding is music but I hope to move some of the focus into interesting visuals.
-
-        I hope you find this blog interesting or at least useful as I present interesting findings and develop my ideas.
- -->
-
+        </a>
       </div>
     </div>
-
-
-
 
     <div class="footer">
 
     </div>
-
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.1/angular.min.js"></script>
-    <script>
-      
-      angular.module("portfolioApp", [])
-      .directive('instagram', ['$http', function($http) {
-        return {
-          link: function(scope, element, attrs) {
-            scope.instagram = null;
-
-            $http.jsonp('https://api.instagram.com/v1/users/1947333134/media/recent/?client_id=ce275d7be8484636b5e9d1eb4ba44f6d&callback=JSON_CALLBACK')
-            .then(function(response) {
-              scope.instagram = response.data.data;
-            }, function(response) {
-
-            });
-
-          },
-          template: '<div class="ui six doubling cards"><a ng-repeat="post in instagram | limitTo:18" class="ui link card" tabindex="0" href="{{post.link}}"><div class="image"><img src="{{post.images.standard_resolution.url}}"></div></a></div>'
-        };
-      }]);
-    </script>
   </body>
 </html>
