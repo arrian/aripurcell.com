@@ -18,7 +18,7 @@
   ],
   "author": "Arrian Purcell <arrian.purcell@gmail.com> (arrian.github.io)",
   "license": "ISC",
-  "homepage": "https://arrian.github.io",
+  "homepage": "https://arrian.github.io/",
   "dependencies": {
     "instafeed.js": "^1.4.1",
     "normalizr": "^3.2.3",
