@@ -80,15 +80,13 @@ const Project = (props) => (
 	    </Grid.Row>
 );
 
-// <Project title='Orion Health Medicines' labels={['work', 'web application', 'java', 'javascript', 'html', 'css']} description='As part of a team Orion Health, a patient-centric medication management solution was developed.' image='/images/project-02.svg' link='https://orionhealth.com/uk/products/medicines/' />
-
 const Projects = (props) => (
 	<ScrollableAnchor id={'projects'}>
 		<div style={{ backgroundColor: '#E6E2DF' }}>
 			<Container text style={{ paddingTop: 20 }}>
 				<Header as='h2' textAlign='center'>Projects</Header>
 				<Grid>
-				  <Project title='Medicines' labels={['web application', 'java', 'javascript']} description='As part of a team Orion Health, developed a patient-centric medication management solution. The solution has been implemented in a wide variety clinical settings.' image='/images/project-02.svg' link='https://orionhealth.com/uk/products/medicines/' />
+				  <Project title='Medicines' labels={['web application', 'java', 'javascript', 'html', 'css']} description='As part of a team at Orion Health, developed a patient-centric medication management solution. The solution has been implemented in a wide variety of clinical settings.' image='/images/project-02.svg' link='https://orionhealth.com/uk/products/medicines/' />
 					<Project title='Planet Search' labels={['web application', 'javascript', 'react', 'redux']} description='Developed a web application for searching astronomical objects.' image='/images/project-05.svg' link='http://arrianpurcell.com/planet-search' />
 					<Project title='Visualising a Live Coding Arts Process' labels={['research', 'publication', 'user study']} description='Published and presented the results of user studies undertaken in my final undergraduate year. The user studies investigated ways of communicating the programming process.' image='/images/project-03.svg' link='http://dl.acm.org/citation.cfm?id=2686634' />
 					<Project title='Art and Understanding through Code Visualisation' labels={['research', 'publication', 'user study', 'c++', 'python']} description='Compiled an undergraduate thesis investigating methods of communicating the programming process through the use of visual cues.' image='/images/project-03.svg' link='https://github.com/arrian/research-project/blob/master/thesis/thesis.pdf' />
