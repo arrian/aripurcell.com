@@ -13,7 +13,7 @@ const Title = (props) => (
 		<h1 style={{ fontSize: '8vw', color: 'white', backgroundColor: '#2c2d22' }}>Arrian Purcell</h1>
 		<div>
 			<Label>Full Stack Software Engineer</Label>
-			<a href="http://maps.google.com/?q=Canberra"><Label><Icon name='marker' /> Canberra - Australia</Label></a>
+			<a href="https://www.google.com/maps/place/Vancouver,+BC,+Canada"><Label><Icon name='marker' /> Vancouver - Canada</Label></a>
 		</div>
 
 		<div style={{ marginTop: 10 }}>
@@ -47,7 +47,7 @@ const About = (props) => (
 				<p> My work experience has led me to build web applications for the health care sector and my education has led me to research the impact of interfaces on user experiences. I hope to promote designing for usability.</p>
 
 				<Header as='h3' inverted textAlign='center'><Icon name='wrench' />Skills</Header>
-				
+
 				<Table basic='very' celled inverted>
 					<Table.Body>
 						<Skill name='Languages' labels={['javascript', 'html', 'css', 'java', 'python', 'c++']}/>
@@ -88,6 +88,7 @@ const Projects = (props) => (
 			<Container text style={{ paddingTop: 20 }}>
 				<Header as='h2' textAlign='center'>Projects</Header>
 				<Grid>
+				  <Project title='Medicines' labels={['web application', 'java', 'javascript']} description='As part of a team Orion Health, developed a patient-centric medication management solution. The solution has been implemented in a wide variety clinical settings.' image='/images/project-02.svg' link='https://orionhealth.com/uk/products/medicines/' />
 					<Project title='Planet Search' labels={['web application', 'javascript', 'react', 'redux']} description='Developed a web application for searching astronomical objects.' image='/images/project-05.svg' link='http://arrianpurcell.com/planet-search' />
 					<Project title='Visualising a Live Coding Arts Process' labels={['research', 'publication', 'user study']} description='Published and presented the results of user studies undertaken in my final undergraduate year. The user studies investigated ways of communicating the programming process.' image='/images/project-03.svg' link='http://dl.acm.org/citation.cfm?id=2686634' />
 					<Project title='Art and Understanding through Code Visualisation' labels={['research', 'publication', 'user study', 'c++', 'python']} description='Compiled an undergraduate thesis investigating methods of communicating the programming process through the use of visual cues.' image='/images/project-03.svg' link='https://github.com/arrian/research-project/blob/master/thesis/thesis.pdf' />
@@ -97,7 +98,7 @@ const Projects = (props) => (
 					<Project title='Social Landscape' labels={['mobile application', 'android', 'java']} description='As part of a university project, ported the "Social Landscape" iOS mobile app to the Android platform.' image='/images/project-07.svg' />
 					<Project title='FHIR Validator' labels={['web application', 'javascript', 'fhir']} description='Implemented a Javascript validator for validating that resources conform to the HL7 FHIR specification.' image='/images/project-08.svg' link='https://github.com/arrian/fhir-validator-js' />
 				</Grid>
-				
+
 			</Container>
 		</div>
 	</ScrollableAnchor>
