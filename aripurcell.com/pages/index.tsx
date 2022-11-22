@@ -10,6 +10,18 @@ import ContactSection from '../components/ContactSection';
 import Navigation from '../components/Navigation';
 import throttle from '../utils/throttle';
 
+const schema = {
+  "@context": "https://schema.org/",
+  "@type": "Person",
+  "name": "Ari Purcell",
+  "url": "https://aripurcell.com",
+  "image": "",
+  "sameAs": [
+    "https://github.com/arrian"
+  ],
+  "jobTitle": "Software Engineer"  
+};
+
 interface Section {
   name: string;
   height: number | undefined;
@@ -117,6 +129,10 @@ export default function Home() {
         <title>Ari Purcell</title>
         <meta name="description" content="Portfolio website of Arrian Purcell, the software engineer designing interfaces." />
         <link rel="icon" href={ sectionToFavicon[section] || "/favicon.ico"} />
+
+        <script type="application/ld+json">
+          { JSON.stringify(schema, null, 2) }
+        </script>
       </Head>
       <div className={styles.page} data-section={section}>
         <div className={styles.colorBar}>
@@ -125,8 +141,10 @@ export default function Home() {
         <header className={styles.header}>
           <div className={styles.container}>
             <div className={styles.name}>
-              <a onClick={() => scroll.home()} className={styles.firstName}>A<span className={styles.nameLong}>ri</span></a>
-              <a onClick={() => scroll.home()} className={styles.lastName}>P<span className={styles.nameLong}>urcell</span></a>
+              <h1>
+                <a onClick={() => scroll.home()} className={styles.firstName}>A<span className={styles.nameLong}>ri&nbsp;</span></a>
+                <a onClick={() => scroll.home()} className={styles.lastName}>P<span className={styles.nameLong}>urcell</span></a>
+              </h1>
               <div className={styles.sectionName}>
                 <h2 className={styles.sectionNameText}>
                 {section}
