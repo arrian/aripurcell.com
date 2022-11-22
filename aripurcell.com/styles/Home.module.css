@@ -91,29 +91,44 @@
   grid-area: header;
   position: sticky;
   top: 0;
-  background-color: var(--background);
   z-index: 1;
   transition: color 300ms ease-out, box-shadow 300ms ease-out, background-color 300ms ease-out;
   color: var(--accent);
   box-shadow: none;
 }
 
-.page[data-section="profile"] .header, .page[data-section="portfolio"] .header,
-.page[data-section="experience"] .header {
+.header:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: -100%;
+  background-color: var(--background);
+  z-index: -1;
+  transition: background-color 300ms ease-out, bottom 300ms ease-out;
+}
+
+.page[data-section="portfolio"] .header:before,
+.page[data-section="experience"] .header:before {
+  bottom: 0;
+}
+
+.page[data-section="profile"] .header:before, .page[data-section="portfolio"] .header:before,
+.page[data-section="experience"] .header:before {
   box-shadow: var(--box-shadow);
 }
 
 .name {
-  display: grid;
-  grid-template-areas: 'first-name section-name' 'last-name last-name';
+  display: flex;
+  gap: var(--space-2);
   position: relative;
-  overflow: hidden;
-  column-gap: var(--space-2);
   user-select: none;
+  width: 100%;
+  justify-content: space-between;
 }
 
 .firstName {
-  grid-area: first-name;
   font-size: var(--font-size-96);
   text-transform: uppercase;
   font-weight: var(--bold);
@@ -122,40 +137,17 @@
 }
 
 .lastName {
-  grid-area: last-name;
+  position: absolute;
   padding-left: var(--last-name-margin);
   transition: padding-left 300ms ease-out, top 300ms ease-out, left 300ms ease-out;
   top: 1em;
   left: 0;
   cursor: pointer;
-}
-
-.lastName, .lastNamePlaceholder {
   font-size: var(--font-size-96);
   text-transform: uppercase;
   font-weight: var(--bold);
   line-height: 1; 
 }
-
-.lastNamePlaceholder {
-  display: none;
-}
-
-.page[data-section="portfolio"] .lastNamePlaceholder, .page[data-section="experience"] .lastNamePlaceholder {
-  display: block;
-}
-
-/* @media screen and (max-width: 749px) {
-  .firstName, .lastName, .lastNamePlaceholder {
-    font-size: var(--font-size-76);
-  }
-}
-
-@media screen and (max-width: 499px) {
-  .firstName, .lastName, .lastNamePlaceholder {
-    font-size: var(--font-size-48);
-  }
-} */
 
 .page[data-section="portfolio"] .name,
 .page[data-section="experience"] .name {
@@ -164,7 +156,6 @@
 
 .page[data-section="portfolio"] .lastName,
 .page[data-section="experience"] .lastName {
-  position: absolute;
   top: 0;
   left: 0.8em;
 }
@@ -260,6 +251,7 @@
   max-width: 500px;
   flex-wrap: wrap;
   gap: var(--space-2);
+  justify-content: center;
 }
 
 .socialLink {
@@ -406,7 +398,7 @@
 }
 
 .roleContainer {
-  margin-top: var(--space-20);
+  margin-top: var(--space-40);
 }
 
 .roleContainer, .locationContainer {
@@ -472,12 +464,6 @@
 .blackCircle {
   background-color: var(--black);
 }
-
-
-
-
-
-
 
 .description {
   padding-top: var(--space-40);
@@ -582,7 +568,7 @@
   align-items: flex-end;
   border-right: 4px solid transparent;
   margin-bottom: var(--space-12);
-  max-width: 100%;
+  width: 100%;
   gap: var(--space-4);
 }
 
@@ -617,8 +603,10 @@
 .projectImageStack {
   display: flex;
   gap: var(--space-1);
-  align-items: flex-start;
+  align-items: flex-end;
   position: relative;
+  width: 100%;
+  justify-content: flex-end;
 }
 
 .portfolio > div:hover .projectImageStack {
@@ -709,21 +697,17 @@
 
 .contact {
   align-items: center;
+  overflow: hidden;
 }
 
 .contactDescription {
   margin-left: auto;
   margin-right: auto;
-  padding-top: var(--space-30);
-  padding-bottom: var(--space-10);
+  margin-top: var(--space-30);
+  margin-bottom: var(--space-10);
   font-size: var(--font-size-24);
   max-width: 400px;
   text-align: center;
-}
-
-.contact .sectionLinks {
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .contactSquares {

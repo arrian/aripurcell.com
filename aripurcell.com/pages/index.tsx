@@ -137,8 +137,6 @@ export default function Home() {
         </header>
         
         <div className={styles.content}>
-            <div className={styles.lastNamePlaceholder}>Purcell</div>
-
             <HomeSection active={ section === 'home' } pagePercent={ pagePercent } ref={homeRef}></HomeSection>
             <ProfileSection active={ section === 'profile' } pagePercent={ pagePercent } ref={profileRef}></ProfileSection>
             <ExperienceSection active={ section === 'experience' } pagePercent={ pagePercent } ref={experienceRef}></ExperienceSection>

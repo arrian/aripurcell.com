@@ -121,7 +121,8 @@ const portfolioItems = [
     title: 'Coding',
     subtitle: `Ongoing`,
     descriptions: [
-      <div className={styles.projectDescription}>I publish side projects, experiments and code across <a className={styles.link} href="https://github.com/arrian">Github</a>, <a className={styles.link} href="https://www.youtube.com/@codebyari">Youtube (@codebyari)</a>, <a className={styles.link} href="https://www.npmjs.com/~arrian">NPM</a> and <a className={styles.link} href="https://codepen.io/arrian">CodePen</a>.</div>,
+      <div className={styles.projectDescription}>I publish side projects, experiments and code across <a className={styles.link} href="https://github.com/arrian">Github</a>, <a className={styles.link} href="https://www.npmjs.com/~arrian">NPM</a> and <a className={styles.link} href="https://codepen.io/arrian">CodePen</a>.</div>,
+      //<a className={styles.link} href="https://www.youtube.com/@codebyari">Youtube (@codebyari)</a>
       <div className={styles.projectDescription}>Some example projects include websocket poker, FHIR validator, code graph, planet search and sony camera js api.</div>
     ]
   },

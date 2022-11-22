@@ -14,6 +14,7 @@ const HomeSection = forwardRef((props: { active: boolean, pagePercent: number },
 
       <div className={styles.description}>
         Hi, I’m <span className={styles.highlight}>Ari</span>. I write software. Let me help you solve your problem.
+        
         <div className={styles.homeCircles} style={{ gap: props.active ? `${props.pagePercent * 300}px` : '40px' }}>
           <div><div className={styles.blueCircle}></div></div>
           <div><div className={styles.yellowCircle}></div></div>
