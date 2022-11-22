@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && next export",
+    "optimise-images": "next-image-export-optimizer",
     "start": "next start",
     "lint": "next lint"
   },
@@ -16,5 +17,9 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "typescript": "4.9.3"
+  },
+  "devDependencies": {
+    "next-image-export-optimizer": "^1.0.1",
+    "next-optimized-images": "^2.6.2"
   }
 }

@@ -1,6 +1,34 @@
 import styles from '../styles/Home.module.css'
 import React, { forwardRef } from 'react';
 
+import cartImage from '../public/portfolio-article-cart-w640.webp';
+import browseImage from '../public/portfolio-article-browse-w640.WEBP';
+import reviewImage from '../public/portfolio-article-review-w640.WEBP';
+import searchImage from '../public/portfolio-article-search-w640.WEBP';
+import supportImage from '../public/portfolio-article-support-w640.WEBP';
+import mobileImage from '../public/portfolio-article-mobile-w640.WEBP';
+import pixel1Image from '../public/portfolio-article-pixel-1-w640.WEBP';
+import pixel2Image from '../public/portfolio-article-pixel-2-w640.WEBP';
+import pixel3Image from '../public/portfolio-article-pixel-3-w640.WEBP';
+import ar1Image from '../public/portfolio-article-ar-1-w640.WEBP';
+import ar2Image from '../public/portfolio-article-ar-2-w640.WEBP';
+import scan1Image from '../public/portfolio-article-scan-1-w640.WEBP';
+import scan2Image from '../public/portfolio-article-scan-2-w640.WEBP';
+import scan3Image from '../public/portfolio-article-scan-3-w640.WEBP';
+import medicinesImage from '../public/portfolio-orion-medicines-w640.WEBP';
+import paperImage from '../public/portfolio-uni-paper-w640.WEBP';
+import thesis1Image from '../public/portfolio-uni-thesis-1-w640.WEBP';
+import thesis2Image from '../public/portfolio-uni-thesis-2-w640.WEBP';
+import thesis3Image from '../public/portfolio-uni-thesis-3-w640.WEBP';
+import social1Image from '../public/portfolio-social-landscape-1-w640.WEBP';
+import social2Image from '../public/portfolio-social-landscape-2-w640.WEBP';
+import art3Image from '../public/portfolio-art-3-w640.WEBP';
+import art1Image from '../public/portfolio-art-1-w640.WEBP';
+import photo2Image from '../public/portfolio-photo-2-w640.WEBP';
+import photo3Image from '../public/portfolio-photo-3-w640.WEBP';
+import photo4Image from '../public/portfolio-photo-4-w640.WEBP';
+import portfolioImage from '../public/portfolio-portfolio-w640.WEBP';
+
 const portfolioItems = [
   {
     title: 'Article.com Website',
@@ -8,23 +36,23 @@ const portfolioItems = [
     subtitle: 'article.com, 2017 - 2021',
     description: 'With a team, built and maintained the full website experience on article.com.',
     images: [[{
-      src: '/portfolio-article-cart.png',
-      alt: ''
+      src: cartImage,
+      alt: 'Article.com cart page example'
     }, {
-      src: '/portfolio-article-browse.png',
-      alt: ''
+      src: browseImage,
+      alt: 'Article.com browse page example'
     }, {
-      src: '/portfolio-article-review.png',
-      alt: ''
+      src: reviewImage,
+      alt: 'Article.com review page example'
     }, {
-      src: '/portfolio-article-search.png',
-      alt: ''
+      src: searchImage,
+      alt: 'Article.com search page example'
     }, {
-      src: '/portfolio-article-support.png',
-      alt: ''
+      src: supportImage,
+      alt: 'Article.com support page example'
     }, {
-      src: '/portfolio-article-mobile.png',
-      alt: ''
+      src: mobileImage,
+      alt: 'Article.com mobile pdp example'
     }]]
   },
   {
@@ -32,13 +60,13 @@ const portfolioItems = [
     subtitle: 'article.com, 2018',
     description: 'In collaboration with UX, built and maintained a style guide and component library used in internal and externally facing software projects.',
     images: [[{
-      src: '/portfolio-article-pixel-1.png',
+      src: pixel1Image,
       alt: ''
     }, {
-      src: '/portfolio-article-pixel-2.png',
+      src: pixel2Image,
       alt: ''
     }, {
-      src: '/portfolio-article-pixel-3.png',
+      src: pixel3Image,
       alt: ''
     }]]
   },
@@ -47,10 +75,10 @@ const portfolioItems = [
     subtitle: 'article.com, 2021',
     description: 'As part of an exploratory project, implemented an augmented reality furniture viewer on the article.com website.',
     images: [[{
-      src: '/portfolio-article-ar-1.png',
+      src: ar1Image,
       alt: ''
     }, {
-      src: '/portfolio-article-ar-2.png',
+      src: ar2Image,
       alt: ''
     }]]
   },
@@ -59,13 +87,13 @@ const portfolioItems = [
     subtitle: 'article.com, 2017',
     description: 'Implemented a warehouse management tool to improve accuracy and efficiency while moving stock.',
     images: [[{
-      src: '/portfolio-article-scan-1.png',
+      src: scan1Image,
       alt: ''
     }, {
-      src: '/portfolio-article-scan-2.png',
+      src: scan2Image,
       alt: ''
     }, {
-      src: '/portfolio-article-scan-3.png',
+      src: scan3Image,
       alt: ''
     }]]
   },
@@ -75,7 +103,7 @@ const portfolioItems = [
     subtitle: 'Orion Health, 2014 - 2017',
     description: 'Built Medicines features and maintained the Medicines web application for managing patient medications in healthcare settings.',
     images: [[{
-      src: '/portfolio-orion-medicines.png',
+      src: medicinesImage,
       alt: 'Orion Health Medicines'
     }]]
   },
@@ -85,7 +113,7 @@ const portfolioItems = [
     subtitle: `Research Paper / OzChi '14, 2014`,
     description: 'Published a research paper based on the results of the undergraduate thesis.',
     images: [[{
-      src: '/portfolio-uni-paper.png',
+      src: paperImage,
       alt: 'Visualising a Live Coding Arts Process Paper'
     }]]
   },
@@ -95,13 +123,13 @@ const portfolioItems = [
     subtitle: `ANU Undergraduate Thesis, 2014`,
     description: 'Explored methods of code visualisation and conducted user studies to determine their effectiveness.',
     images: [[{
-      src: '/portfolio-uni-thesis-1.png',
+      src: thesis1Image,
       alt: ''
     }, {
-      src: '/portfolio-uni-thesis-2.png',
+      src: thesis2Image,
       alt: ''
     }, {
-      src: '/portfolio-uni-thesis-3.png',
+      src: thesis3Image,
       alt: ''
     }]]
   },
@@ -110,10 +138,10 @@ const portfolioItems = [
     subtitle: `Android App, 2013`,
     description: 'As part of a university project alongside an external company, our team implemented an Android app for displaying population statistics.',
     images: [[{
-      src: '/portfolio-social-landscape-1.png',
+      src: social1Image,
       alt: ''
     }, {
-      src: '/portfolio-social-landscape-2.png',
+      src: social2Image,
       alt: ''
     }]]
   },
@@ -133,20 +161,20 @@ const portfolioItems = [
       <div className={styles.projectDescription}>As a side project, I occasionally publish paintings on <a className={styles.link} href="https://www.youtube.com/@art-by-ari">Youtube (@art-by-ari)</a> and photos on <a className={styles.link} href="https://www.flickr.com/photos/197031237@N08/">Flickr</a>.</div>
     ],
     images: [[{
-      src: '/portfolio-art-3.png',
+      src: art3Image,
       alt: ''
     }, {
-      src: '/portfolio-art-1.png',
+      src: art1Image,
       alt: ''
     }],
     [{
-      src: '/portfolio-photo-2.png',
+      src: photo2Image,
       alt: ''
     }, {
-      src: '/portfolio-photo-3.png',
+      src: photo3Image,
       alt: ''
     }, {
-      src: '/portfolio-photo-4.png',
+      src: photo4Image,
       alt: ''
     }]]
   },
@@ -155,7 +183,7 @@ const portfolioItems = [
     link: '#home',
     subtitle: `2022`,
     images: [[{
-      src: '/portfolio-portfolio.png',
+      src: portfolioImage,
       alt: ''
     }]]
   }
@@ -175,7 +203,7 @@ const HomeSection = forwardRef((props: { active: boolean, pagePercent: number, s
           { item.descriptions ? item.descriptions : '' }
           { item.images && item.images.length ? 
             item.images.map(imageStack => <div className={styles.projectImageStack}>
-              { imageStack.map((image, index) => <img src={image.src} alt={image.alt} />) }
+              { imageStack.map((image, index) => <img src={image.src.src} alt={image.alt} width={image.src.width < 200 ? image.src.width : 200} height={ image.src.width < 200 ? image.src.height : image.src.height * (200 / image.src.width) } />) }
             </div>)
            : ''}
         </div>
@@ -184,5 +212,7 @@ const HomeSection = forwardRef((props: { active: boolean, pagePercent: number, s
     </section>
   );
 });
+
+//loader={imageLoader}
 
 export default HomeSection;
