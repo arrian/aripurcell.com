@@ -1,31 +1,35 @@
-.DS_STORE
-node_modules
-*~
-*.pyc
-.grunt
-_SpecRunner.html
-__benchmarks__
-remote-repo/
-coverage/
-.module-cache
-*.gem
-docs/.bundle
-docs/code
-docs/_site
-docs/.sass-cache
-docs/js/*
-docs/downloads/*.zip
-docs/vendor/bundle
-fixtures/dom/public/react-dom.js
-fixtures/dom/public/react.js
-test/the-files-to-test.generated.js
-*.log*
-chrome-user-data
-*.sublime-project
-*.sublime-workspace
-.idea
-*.iml
-.vscode
-*.swp
-*.swo
-*react*min*.js
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# local env files
+.env*.local
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+/build/_next
