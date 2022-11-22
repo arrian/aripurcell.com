@@ -581,9 +581,9 @@
   flex-direction: column;
   align-items: flex-end;
   border-right: 4px solid transparent;
-  padding-right: var(--space-2);
   margin-bottom: var(--space-12);
   max-width: 100%;
+  gap: var(--space-4);
 }
 
 .portfolio > div:hover {
@@ -603,13 +603,10 @@
   transition: background-color 300ms ease-out, color 300ms ease-out;
   font-weight: normal;
   font-size: var(--font-size-14);
-  margin-bottom: var(--space-4);
-  margin-top: var(--space-2);
   opacity: 0.6;
 }
 
 .projectDescription {
-  margin-bottom: var(--space-4);
   max-width: 350px;
 }
 
@@ -629,7 +626,7 @@
 }
 
 .portfolio img {
-  margin-left: -70px;
+  margin-left: -160px;
   outline: 2px solid transparent;
   box-shadow: var(--box-shadow);
   /* border-radius: 12px; */

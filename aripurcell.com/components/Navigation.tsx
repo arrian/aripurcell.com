@@ -1,7 +1,7 @@
 import styles from '../styles/Home.module.css'
-import React, { forwardRef } from 'react';
+import React from 'react';
 
-const HomeSection = forwardRef((props: { scroll: Record<string, Function> }) => {
+const HomeSection = (props: { scroll: Record<string, Function> }) => {
 
   return (
     <div className={styles.container}>
@@ -21,6 +21,6 @@ const HomeSection = forwardRef((props: { scroll: Record<string, Function> }) => 
       </nav>
     </div>
   );
-});
+};
 
 export default HomeSection;

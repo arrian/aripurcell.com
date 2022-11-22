@@ -8,31 +8,7 @@ import ExperienceSection from '../components/ExperienceSection';
 import PortfolioSection from '../components/PortfolioSection';
 import ContactSection from '../components/ContactSection';
 import Navigation from '../components/Navigation';
-
-
-const throttle = (fn: Function, wait: number = 300) => {
-  let inThrottle: boolean,
-    lastFn: ReturnType<typeof setTimeout>,
-    lastTime: number;
-  return function (this: any) {
-    const context = this,
-      args = arguments;
-    if (!inThrottle) {
-      fn.apply(context, args);
-      lastTime = Date.now();
-      inThrottle = true;
-    } else {
-      clearTimeout(lastFn);
-      lastFn = setTimeout(() => {
-        if (Date.now() - lastTime >= wait) {
-          fn.apply(context, args);
-          lastTime = Date.now();
-        }
-      }, Math.max(wait - (Date.now() - lastTime), 0));
-    }
-  };
-};
-
+import throttle from '../utils/throttle';
 
 interface Section {
   name: string;
@@ -50,6 +26,7 @@ export default function Home() {
     width: undefined,
     height: undefined,
   });
+
   useEffect(() => {
     function handleResize() {
       setWindowSize({
@@ -131,7 +108,7 @@ export default function Home() {
     portfolio: '/favicon-m.ico',
     experience: '/favicon.ico',
     contact: '/favicon-k.ico',
-    home: '/favicon.ico'
+    home: '/favicon-k.ico'
   };
 
   return (
