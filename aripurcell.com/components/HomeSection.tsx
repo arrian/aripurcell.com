@@ -1,5 +1,6 @@
 import styles from '../styles/Home.module.css'
 import React, { forwardRef } from 'react';
+import locationImage from '../public/location.svg';
 
 const HomeSection = forwardRef((props: { active: boolean, pagePercent: number }, ref: React.Ref<HTMLDivElement>) => {
 
@@ -9,7 +10,7 @@ const HomeSection = forwardRef((props: { active: boolean, pagePercent: number },
         <div className={styles.role}>Software Engineer</div>
       </div>
       <div className={styles.locationContainer}>
-        <div className={styles.location}><i className="icon icon-location"></i>Vancouver, Canada</div>
+        <div className={styles.location}><img src={locationImage.src} /> Vancouver, Canada</div>
       </div>
 
       <div className={styles.description}>

@@ -1,33 +1,35 @@
 import styles from '../styles/Home.module.css'
 import React, { forwardRef } from 'react';
 
+import arrowRightImage from '../public/arrow-right.svg';
+
 import cartImage from '../public/portfolio-article-cart-w640.webp';
-import browseImage from '../public/portfolio-article-browse-w640.WEBP';
-import reviewImage from '../public/portfolio-article-review-w640.WEBP';
-import searchImage from '../public/portfolio-article-search-w640.WEBP';
-import supportImage from '../public/portfolio-article-support-w640.WEBP';
-import mobileImage from '../public/portfolio-article-mobile-w640.WEBP';
-import pixel1Image from '../public/portfolio-article-pixel-1-w640.WEBP';
-import pixel2Image from '../public/portfolio-article-pixel-2-w640.WEBP';
-import pixel3Image from '../public/portfolio-article-pixel-3-w640.WEBP';
-import ar1Image from '../public/portfolio-article-ar-1-w640.WEBP';
-import ar2Image from '../public/portfolio-article-ar-2-w640.WEBP';
-import scan1Image from '../public/portfolio-article-scan-1-w640.WEBP';
-import scan2Image from '../public/portfolio-article-scan-2-w640.WEBP';
-import scan3Image from '../public/portfolio-article-scan-3-w640.WEBP';
-import medicinesImage from '../public/portfolio-orion-medicines-w640.WEBP';
-import paperImage from '../public/portfolio-uni-paper-w640.WEBP';
-import thesis1Image from '../public/portfolio-uni-thesis-1-w640.WEBP';
-import thesis2Image from '../public/portfolio-uni-thesis-2-w640.WEBP';
-import thesis3Image from '../public/portfolio-uni-thesis-3-w640.WEBP';
-import social1Image from '../public/portfolio-social-landscape-1-w640.WEBP';
-import social2Image from '../public/portfolio-social-landscape-2-w640.WEBP';
-import art3Image from '../public/portfolio-art-3-w640.WEBP';
-import art1Image from '../public/portfolio-art-1-w640.WEBP';
-import photo2Image from '../public/portfolio-photo-2-w640.WEBP';
-import photo3Image from '../public/portfolio-photo-3-w640.WEBP';
-import photo4Image from '../public/portfolio-photo-4-w640.WEBP';
-import portfolioImage from '../public/portfolio-portfolio-w640.WEBP';
+import browseImage from '../public/portfolio-article-browse-w640.webp';
+import reviewImage from '../public/portfolio-article-review-w640.webp';
+import searchImage from '../public/portfolio-article-search-w640.webp';
+import supportImage from '../public/portfolio-article-support-w640.webp';
+import mobileImage from '../public/portfolio-article-mobile-w640.webp';
+import pixel1Image from '../public/portfolio-article-pixel-1-w640.webp';
+import pixel2Image from '../public/portfolio-article-pixel-2-w640.webp';
+import pixel3Image from '../public/portfolio-article-pixel-3-w640.webp';
+import ar1Image from '../public/portfolio-article-ar-1-w640.webp';
+import ar2Image from '../public/portfolio-article-ar-2-w640.webp';
+import scan1Image from '../public/portfolio-article-scan-1-w640.webp';
+import scan2Image from '../public/portfolio-article-scan-2-w640.webp';
+import scan3Image from '../public/portfolio-article-scan-3-w640.webp';
+import medicinesImage from '../public/portfolio-orion-medicines-w640.webp';
+import paperImage from '../public/portfolio-uni-paper-w640.webp';
+import thesis1Image from '../public/portfolio-uni-thesis-1-w640.webp';
+import thesis2Image from '../public/portfolio-uni-thesis-2-w640.webp';
+import thesis3Image from '../public/portfolio-uni-thesis-3-w640.webp';
+import social1Image from '../public/portfolio-social-landscape-1-w640.webp';
+import social2Image from '../public/portfolio-social-landscape-2-w640.webp';
+import art3Image from '../public/portfolio-art-3-w640.webp';
+import art1Image from '../public/portfolio-art-1-w640.webp';
+import photo2Image from '../public/portfolio-photo-2-w640.webp';
+import photo3Image from '../public/portfolio-photo-3-w640.webp';
+import photo4Image from '../public/portfolio-photo-4-w640.webp';
+import portfolioImage from '../public/portfolio-portfolio-w640.webp';
 
 const portfolioItems = [
   {
@@ -196,14 +198,14 @@ const HomeSection = forwardRef((props: { active: boolean, pagePercent: number, s
       <h2 className={styles.sectionHeader}>Portfolio</h2>
 
       {
-        portfolioItems.map(item => <div>
-          { item.link ? <a href={item.link}><h3>{item.title} <i className="icon icon-arrow-right"></i></h3></a> : <h3>{ item.title }</h3>}
+        portfolioItems.map(item => <div className={styles.portfolioItem}>
+          { item.link ? <a href={item.link}><h3>{item.title} <img className={styles.portfolioItemLinkArrow} src={arrowRightImage.src} /></h3></a> : <h3>{ item.title }</h3>}
           { item.subtitle ? <div className={styles.projectDescriptionSubtitle}>{ item.subtitle }</div> : '' }
           { item.description ? <div className={styles.projectDescription}>{ item.description }</div> : '' }
           { item.descriptions ? item.descriptions : '' }
           { item.images && item.images.length ? 
             item.images.map(imageStack => <div className={styles.projectImageStack}>
-              { imageStack.map((image, index) => <img src={image.src.src} alt={image.alt} width={image.src.width < 200 ? image.src.width : 200} height={ image.src.width < 200 ? image.src.height : image.src.height * (200 / image.src.width) } />) }
+              { imageStack.map((image, index) => <img className={styles.portfolioImage} src={image.src.src} alt={image.alt} width={image.src.width < 200 ? image.src.width : 200} height={ image.src.width < 200 ? image.src.height : image.src.height * (200 / image.src.width) } />) }
             </div>)
            : ''}
         </div>
@@ -213,6 +215,5 @@ const HomeSection = forwardRef((props: { active: boolean, pagePercent: number, s
   );
 });
 
-//loader={imageLoader}
 
 export default HomeSection;
