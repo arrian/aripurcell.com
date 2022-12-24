@@ -129,7 +129,7 @@
 }
 
 .firstName {
-  font-size: var(--font-size-96);
+  font-size: var(--font-size-76);
   text-transform: uppercase;
   font-weight: var(--bold);
   line-height: 1;
@@ -143,7 +143,7 @@
   top: 1em;
   left: 0;
   cursor: pointer;
-  font-size: var(--font-size-96);
+  font-size: var(--font-size-76);
   text-transform: uppercase;
   font-weight: var(--bold);
   line-height: 1; 
@@ -178,7 +178,7 @@
   display: inline-block;
   background-color: var(--accent);
   padding: var(--space-2) var(--space-4);
-  font-size: var(--font-size-32);
+  font-size: var(--font-size-24);
   color: var(--text-inverted-color);
   transition: background-color 300ms ease-out, opacity 300ms ease-out, visibility 300ms ease-out;
   text-transform: capitalize;
@@ -254,7 +254,7 @@
   justify-content: center;
 }
 
-.socialLink {
+.socialLink, .socialLink:any-link {
   font-size: var(--font-size-16);
   background-color: var(--neutral-dark);
   color: var(--neutral);
@@ -283,18 +283,18 @@
 }
 
 .navigation {
-  font-size: var(--font-size-18);
+  font-size: var(--font-size-14);
   line-height: 2.8;
   display: flex;
   align-items: baseline;
   position: fixed;
-  bottom: var(--space-12);
+  bottom: var(--space-4);
   gap: var(--space-14);
   margin-left: var(--space-4);
 }
 
 .navigation > * {
-  width: 70px;
+  width: 50px;
   display: flex;
   justify-content: flex-end;
 
@@ -410,7 +410,7 @@
   display: inline-block;
   background-color: var(--black);
   padding: var(--space-3) var(--space-5);
-  font-size: var(--font-size-32);
+  font-size: var(--font-size-24);
   color: var(--neutral);
   flex-basis: auto;
   flex-shrink: 0;
@@ -522,8 +522,8 @@
 
 .profileImagePlaceholder {
   background-color: var(--accent);
-  max-width: 320px;
-  height: 320px;
+  max-width: 280px;
+  height: 280px;
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -532,7 +532,7 @@
 }
 
 .profileImagePlaceholder img {
-  height: 320px;
+  height: 280px;
 }
 
 /* Portfolio */
@@ -542,27 +542,36 @@
   overflow: hidden;
 }
 
-.portfolio:after {
-  position: absolute;
-  bottom: 0;  
-  height: 100%;
-  width: 100%;
-  content: "";
-  background: linear-gradient(to right,
-     var(--neutral) 5%, 
-     rgba(255,255,255, 0) 15%
-  );
-  pointer-events: none; /* so the text is still selectable */
-  opacity: 0;
-  transition-delay: 0;
-  transition: opacity 0ms ease-out;
+
+@media screen and (max-width: 749px) {
+  .portfolio:after {
+    position: absolute;
+    bottom: 0;  
+    height: 100%;
+    width: 100%;
+    content: "";
+    background: linear-gradient(to right,
+      var(--neutral) 5%, 
+      rgba(255,255,255, 0) 15%
+    );
+    pointer-events: none; /* so the text is still selectable */
+    opacity: 0;
+    transition-delay: 0;
+    transition: opacity 0ms ease-out;
+  }
 }
 
 .page[data-section="portfolio"] .portfolio:after {
   opacity: 1;
   transition: opacity 300ms ease-out;
   transition-delay: 300ms;
-  
+}
+
+.portfolioGrid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: var(--space-8);
 }
 
 .portfolioItem {
@@ -618,9 +627,9 @@
   transition: gap 300ms ease-out, transform 300ms ease-out;
 }
 
-.portfolioItem:hover .projectImageStack {
+/* .portfolioItem:hover .projectImageStack {
   gap: var(--space-8);
-}
+} */
 
 .portfolioImage {
   margin-left: -160px;

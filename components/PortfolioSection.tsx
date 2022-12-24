@@ -157,26 +157,16 @@ const portfolioItems = [
     ]
   },
   {
-    title: 'Art / Photography',
+    title: 'Art',
     subtitle: `Ongoing`,
     descriptions: [
-      <div className={styles.projectDescription}>As a side project, I occasionally publish paintings on <a className={styles.link} href="https://www.youtube.com/@art-by-ari">Youtube (@art-by-ari)</a> and photos on <a className={styles.link} href="https://www.flickr.com/photos/197031237@N08/">Flickr</a>.</div>
+      <div className={styles.projectDescription}>As a side project, I occasionally publish paintings on <a className={styles.link} href="https://www.youtube.com/@art-by-ari">Youtube (@art-by-ari)</a>.</div>
     ],
     images: [[{
       src: art3Image,
       alt: ''
     }, {
       src: art1Image,
-      alt: ''
-    }],
-    [{
-      src: photo2Image,
-      alt: ''
-    }, {
-      src: photo3Image,
-      alt: ''
-    }, {
-      src: photo4Image,
       alt: ''
     }]]
   },
@@ -191,15 +181,18 @@ const portfolioItems = [
   }
 ];
 
+const ConditionalLink = ({ link, children } : { link: string | undefined, children: React.ReactNode }) => 
+  link ? <a className={styles.portfolioItem} href={link}>{children}</a> : <div className={styles.portfolioItem}>{children}</div>;
+
 const HomeSection = forwardRef((props: { active: boolean, pagePercent: number, scroll: Record<string, Function> }, ref: React.Ref<HTMLDivElement>) => {
 
   return (
     <section className={`${styles.portfolio} ${styles.container}`} ref={ref} id="portfolio">
       <h2 className={styles.sectionHeader}>Portfolio</h2>
-
+      <div className={styles.portfolioGrid}>
       {
-        portfolioItems.map(item => <div className={styles.portfolioItem}>
-          { item.link ? <a href={item.link}><h3>{item.title} <img className={styles.portfolioItemLinkArrow} src={arrowRightImage.src} /></h3></a> : <h3>{ item.title }</h3>}
+        portfolioItems.map(item => <ConditionalLink link={item.link}>
+          <h3>{ item.title } { item.link ? <img className={styles.portfolioItemLinkArrow} src={arrowRightImage.src} /> : null}</h3>
           { item.subtitle ? <div className={styles.projectDescriptionSubtitle}>{ item.subtitle }</div> : '' }
           { item.description ? <div className={styles.projectDescription}>{ item.description }</div> : '' }
           { item.descriptions ? item.descriptions : '' }
@@ -208,9 +201,10 @@ const HomeSection = forwardRef((props: { active: boolean, pagePercent: number, s
               { imageStack.map((image, index) => <img className={styles.portfolioImage} src={image.src.src} alt={image.alt} width={image.src.width < 200 ? image.src.width : 200} height={ image.src.width < 200 ? image.src.height : image.src.height * (200 / image.src.width) } />) }
             </div>)
            : ''}
-        </div>
+        </ConditionalLink>
         )
       }
+      </div>
     </section>
   );
 });
