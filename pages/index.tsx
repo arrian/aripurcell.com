@@ -9,6 +9,7 @@ import PortfolioSection from '../components/PortfolioSection';
 import ContactSection from '../components/ContactSection';
 import Navigation from '../components/Navigation';
 import throttle from '../utils/throttle';
+import LogRocket from 'logrocket';
 
 const schema = {
   "@context": "https://schema.org/",
@@ -30,6 +31,10 @@ interface Section {
 interface Dimensions {
   width: number | undefined;
   height: number | undefined;
+}
+
+if (typeof window !== 'undefined') {
+  LogRocket.init('sguv3s/portfolio');
 }
 
 export default function Home() {
@@ -63,7 +68,6 @@ export default function Home() {
   const contactRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    console.log('offsetHeight', homeRef.current?.offsetHeight);
     setSections([
       { name: 'home', height: homeRef.current?.offsetHeight },
       { name: 'profile', height: profileRef.current?.offsetHeight },
@@ -155,11 +159,11 @@ export default function Home() {
         </header>
         
         <div className={styles.content}>
-            <HomeSection active={ section === 'home' } pagePercent={ pagePercent } ref={homeRef}></HomeSection>
-            <ProfileSection active={ section === 'profile' } pagePercent={ pagePercent } ref={profileRef}></ProfileSection>
-            <ExperienceSection active={ section === 'experience' } pagePercent={ pagePercent } ref={experienceRef}></ExperienceSection>
-            <PortfolioSection active={ section === 'portfolio' } pagePercent={ pagePercent } ref={portfolioRef} scroll={scroll}></PortfolioSection>
-            <ContactSection active={ section === 'contact' } pagePercent={ pagePercent } ref={contactRef}></ContactSection>
+            <HomeSection key="home" active={ section === 'home' } pagePercent={ pagePercent } ref={homeRef}></HomeSection>
+            <ProfileSection key="profile" active={ section === 'profile' } pagePercent={ pagePercent } ref={profileRef}></ProfileSection>
+            <ExperienceSection key="experience" active={ section === 'experience' } pagePercent={ pagePercent } ref={experienceRef}></ExperienceSection>
+            <PortfolioSection key="portfolio" active={ section === 'portfolio' } pagePercent={ pagePercent } ref={portfolioRef} scroll={scroll}></PortfolioSection>
+            <ContactSection key="contact" active={ section === 'contact' } pagePercent={ pagePercent } ref={contactRef}></ContactSection>
 
             <Navigation scroll={scroll}></Navigation>
         </div>

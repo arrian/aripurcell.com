@@ -37,7 +37,7 @@ const portfolioItems = [
     link: 'https://www.article.com/',
     subtitle: 'article.com, 2017 - 2021',
     description: 'With a team, built and maintained the full website experience on article.com.',
-    images: [[{
+    images: [{
       src: cartImage,
       alt: 'Article.com cart page example'
     }, {
@@ -55,13 +55,13 @@ const portfolioItems = [
     }, {
       src: mobileImage,
       alt: 'Article.com mobile pdp example'
-    }]]
+    }]
   },
   {
     title: 'Pixel Component Library',
     subtitle: 'article.com, 2018',
     description: 'In collaboration with UX, built and maintained a style guide and component library used in internal and externally facing software projects.',
-    images: [[{
+    images: [{
       src: pixel1Image,
       alt: ''
     }, {
@@ -70,25 +70,25 @@ const portfolioItems = [
     }, {
       src: pixel3Image,
       alt: ''
-    }]]
+    }]
   },
   {
     title: 'Furniture AR Viewer',
     subtitle: 'article.com, 2021',
     description: 'As part of an exploratory project, implemented an augmented reality furniture viewer on the article.com website.',
-    images: [[{
+    images: [{
       src: ar1Image,
       alt: ''
     }, {
       src: ar2Image,
       alt: ''
-    }]]
+    }]
   },
   {
     title: 'Warehouse Scanner App',
     subtitle: 'article.com, 2017',
     description: 'Implemented a warehouse management tool to improve accuracy and efficiency while moving stock.',
-    images: [[{
+    images: [{
       src: scan1Image,
       alt: ''
     }, {
@@ -97,34 +97,34 @@ const portfolioItems = [
     }, {
       src: scan3Image,
       alt: ''
-    }]]
+    }]
   },
   {
     title: 'Medicines Web App',
     link: 'https://orionhealth.com/uk/products/medicines/',
     subtitle: 'Orion Health, 2014 - 2017',
     description: 'Built Medicines features and maintained the Medicines web application for managing patient medications in healthcare settings.',
-    images: [[{
+    images: [{
       src: medicinesImage,
       alt: 'Orion Health Medicines'
-    }]]
+    }]
   },
   {
     title: 'Visualising a Live Coding Arts Process',
     link: 'http://dl.acm.org/citation.cfm?id=2686634',
     subtitle: `Research Paper / OzChi '14, 2014`,
     description: 'Published a research paper based on the results of the undergraduate thesis.',
-    images: [[{
+    images: [{
       src: paperImage,
       alt: 'Visualising a Live Coding Arts Process Paper'
-    }]]
+    }]
   },
   {
     title: 'Art and Understanding through Code Visualisation',
     link: 'https://github.com/arrian/research-project/blob/master/thesis/thesis.pdf',
     subtitle: `ANU Undergraduate Thesis, 2014`,
     description: 'Explored methods of code visualisation and conducted user studies to determine their effectiveness.',
-    images: [[{
+    images: [{
       src: thesis1Image,
       alt: ''
     }, {
@@ -133,19 +133,19 @@ const portfolioItems = [
     }, {
       src: thesis3Image,
       alt: ''
-    }]]
+    }]
   },
   {
     title: 'Social Landscape',
     subtitle: `Android App, 2013`,
     description: 'As part of a university project alongside an external company, our team implemented an Android app for displaying population statistics.',
-    images: [[{
+    images: [{
       src: social1Image,
       alt: ''
     }, {
       src: social2Image,
       alt: ''
-    }]]
+    }]
   },
   {
     title: 'Coding',
@@ -153,7 +153,7 @@ const portfolioItems = [
     descriptions: [
       <div className={styles.projectDescription}>I publish side projects, experiments and code across <a className={styles.link} href="https://github.com/arrian">Github</a>, <a className={styles.link} href="https://www.npmjs.com/~arrian">NPM</a> and <a className={styles.link} href="https://codepen.io/arrian">CodePen</a>.</div>,
       //<a className={styles.link} href="https://www.youtube.com/@codebyari">Youtube (@codebyari)</a>
-      <div className={styles.projectDescription}>Some example projects include websocket poker, FHIR validator, code graph, planet search and sony camera js api.</div>
+      //<div className={styles.projectDescription}>Some example projects include websocket poker, FHIR validator, code graph, planet search and sony camera js api.</div>
     ]
   },
   {
@@ -162,27 +162,27 @@ const portfolioItems = [
     descriptions: [
       <div className={styles.projectDescription}>As a side project, I occasionally publish paintings on <a className={styles.link} href="https://www.youtube.com/@art-by-ari">Youtube (@art-by-ari)</a>.</div>
     ],
-    images: [[{
+    images: [{
       src: art3Image,
       alt: ''
     }, {
       src: art1Image,
       alt: ''
-    }]]
+    }]
   },
   {
     title: 'This Website ;)',
     link: '#home',
     subtitle: `2022`,
-    images: [[{
+    images: [{
       src: portfolioImage,
       alt: ''
-    }]]
+    }]
   }
 ];
 
-const ConditionalLink = ({ link, children } : { link: string | undefined, children: React.ReactNode }) => 
-  link ? <a className={styles.portfolioItem} href={link}>{children}</a> : <div className={styles.portfolioItem}>{children}</div>;
+const ConditionalLink = ({ link, title, children } : { link: string | undefined, title: string, children: React.ReactNode }) => 
+  link ? <a key={title} className={styles.portfolioItem} href={link}>{children}</a> : <div key={title} className={styles.portfolioItem}>{children}</div>;
 
 const HomeSection = forwardRef((props: { active: boolean, pagePercent: number, scroll: Record<string, Function> }, ref: React.Ref<HTMLDivElement>) => {
 
@@ -191,15 +191,13 @@ const HomeSection = forwardRef((props: { active: boolean, pagePercent: number, s
       <h2 className={styles.sectionHeader}>Portfolio</h2>
       <div className={styles.portfolioGrid}>
       {
-        portfolioItems.map(item => <ConditionalLink link={item.link}>
+        portfolioItems.map(item => <ConditionalLink key={item.title} title={item.title} link={item.link}>
           <h3>{ item.title } { item.link ? <img className={styles.portfolioItemLinkArrow} src={arrowRightImage.src} /> : null}</h3>
           { item.subtitle ? <div className={styles.projectDescriptionSubtitle}>{ item.subtitle }</div> : '' }
           { item.description ? <div className={styles.projectDescription}>{ item.description }</div> : '' }
           { item.descriptions ? item.descriptions : '' }
           { item.images && item.images.length ? 
-            item.images.map(imageStack => <div className={styles.projectImageStack}>
-              { imageStack.map((image, index) => <img className={styles.portfolioImage} src={image.src.src} alt={image.alt} width={image.src.width < 200 ? image.src.width : 200} height={ image.src.width < 200 ? image.src.height : image.src.height * (200 / image.src.width) } />) }
-            </div>)
+            <div className={styles.projectImageStack}>{item.images.map((image, index) => <img key={`portfolio-image-${image.src.src}`} className={styles.portfolioImage} src={image.src.src} alt={image.alt} width={image.src.width < 200 ? image.src.width : 200} height={ image.src.width < 200 ? image.src.height : image.src.height * (200 / image.src.width) } />)}</div>
            : ''}
         </ConditionalLink>
         )
